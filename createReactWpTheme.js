@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-present, create-react-wp
+ * Copyright (c) 2015-present devloco
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -59,7 +59,7 @@ const scriptsFromGit = function() {
     process.chdir(tempFolderName);
     const tempPath = process.cwd();
     console.log(chalk.magenta("Cloning react-scripts-wptheme from GitHub..."));
-    execSync("git clone https://github.com/create-react-wp/react-scripts-wptheme.git");
+    execSync("git clone https://github.com/devloco/react-scripts-wptheme.git");
     process.chdir("..");
     let scriptsPath = path.join(tempPath, "react-scripts-wptheme");
     return {
@@ -72,7 +72,7 @@ const scriptsFromGit = function() {
 
 const scriptsFromFile = function() {
     return {
-        scriptsPath: "E:\\WPDev\\github\\create-react-wp\\react-scripts-wptheme",
+        scriptsPath: "E:\\WPDev\\github\\devloco\\react-scripts-wptheme",
         callback: function() {}
     };
 };

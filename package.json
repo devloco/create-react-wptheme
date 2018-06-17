@@ -1,5 +1,5 @@
 {
-    "name": "@create-react-wp/create-react-wptheme",
+    "name": "@devloco/create-react-wptheme",
     "version": "0.0.1",
     "description": "Create React WP themes with no build configuration.",
     "main": "index.js",
@@ -8,17 +8,17 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/create-react-wp/create-react-wptheme.git"
+        "url": "git+https://github.com/devloco/create-react-wptheme.git"
     },
     "keywords": [
         "react"
     ],
-    "author": "create-react-wp",
+    "author": "devloco",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/create-react-wp/create-react-wptheme/issues"
+        "url": "https://github.com/devloco/create-react-wptheme/issues"
     },
-    "homepage": "https://github.com/create-react-wp/create-react-wptheme#readme",
+    "homepage": "https://github.com/devloco/create-react-wptheme#readme",
     "bin": {
         "create-react-wptheme": "./index.js"
     },

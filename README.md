@@ -23,7 +23,7 @@ development server instead of the Webpack Dev Server.**
     -   Add new files where possible.
     -   This will make merges easier.
         -   Don't laugh at things like the "return" jammed right in the middle of `init.js`.
-            -   [line 138](https://github.com/create-react-wp/react-scripts-wptheme/blob/master/scripts/init.js)
+            -   [line 138](https://github.com/devloco/react-scripts-wptheme/blob/master/scripts/init.js)
             -   Seriously, I have no idea what the next version of `react-scripts` is going to look like, but I bet that will merge nice-n-easy.
     -   However, something worse than merge conflicts is confusing users.
         -   If completely munging one of the original files will lower the number of support issues... do it!
@@ -46,7 +46,7 @@ Here are the steps to install:
     -   Clone this repo into a temp folder:
         -   Windows: `md temp && cd temp`
         -   Mac or \*nix: `mkdir temp && cd temp`
-        -   `git clone https://github.com/create-react-wp/create-react-wptheme.git`
+        -   `git clone https://github.com/devloco/create-react-wptheme.git`
     -   Change dir into the create-react-wptheme package:
         -   `cd create-react-wptheme`
     -   Use npm to create the executable:
@@ -58,7 +58,7 @@ Here are the steps to install:
 Now you can create a WordPress theme using the `create-react-wptheme` executable:
 
 -   You need git and npm installed.
-    -   The `create-react-wptheme` executable pulls [react-scripts-wptheme](https://github.com/create-react-wp/react-scripts-wptheme) from Git.
+    -   The `create-react-wptheme` executable pulls [react-scripts-wptheme](https://github.com/devloco/react-scripts-wptheme) from Git.
     -   Non-Git version coming soon. See TODO list below.
 -   Make sure your WordPress server is up and running.
 -   Change dir into your WordPress themes folder (**this is just an example, use your real themes folder**).
