@@ -9,6 +9,7 @@ development server instead of the Webpack Dev Server.**
 ## Goals
 
 -   Remove WebPackDevServer and use your WordPress dev server instead.
+    -   Also, do not proxy the WordPress server.
     -   This has many benefits:
         -   One: Never CORS me again.
         -   Two: Never CORS me again.
@@ -153,12 +154,6 @@ For example:
     -   ~~Note that the development build is not optimized. To create a production build, use yarn build.~~
 -   Test with Linux.
 -   Publish to NPM.
--   Utilize ErrorOverlay similar to create-react-app,
-    -   see: TODO note in wpstart.js.
-    -   see error overlay stuff in: https://github.com/facebook/create-react-app/blob/master/packages/react-dev-utils/webpackHotDevClient.js
--   I picture the `react-src/public` folder getting rather large for many themes.
-    -   Stop copying to `react-src/build` for every save during dev.
-    -   Instead use `rsync` and `robocopy` to copy only the changed files directly to the theme's root on startup and each save.
 
 ## Acknowledgements
 
