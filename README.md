@@ -6,32 +6,6 @@ create React WordPress themes as easily as `create-react-app` allows other devs 
 The biggest difference with this project and the original is that **it uses your WordPress server as the
 development server instead of the Webpack Dev Server.**
 
-## Goals
-
--   Remove WebPackDevServer and use your WordPress dev server instead.
-    -   Also, do not proxy the WordPress server.
-    -   This has many benefits:
-        -   One: Never CORS me again.
-        -   Two: Never CORS me again.
-            -   Just a little _Pacific Rim_ joke for ya.
-                -   Just a little _Thor: Ragnarok_ joke for ya.
-        -   I mean, really, do you need more reasons than avoiding CORS?
--   No need for any `wp_enqueue_script` stuff.
--   Maintain feature parity(ish) with `create-react-app`
-    -   Things like create-react-app's Error Overlay stuff isn't implemented here yet.
-        -   But unlike some other projects I've looked at, since CORS isn't a problem, the only thing stopping me from implementing the Error Overlay is time.
--   Touch the original `react-scripts` as little as possible.
-    -   Add new files where possible.
-    -   This will make merges easier.
-        -   Don't laugh at things like the "return" jammed right in the middle of `init.js`.
-            -   [line 113](https://github.com/devloco/react-scripts-wptheme/blob/master/scripts/init.js)
-            -   Seriously, I have no idea what the next version of `react-scripts` is going to look like, but I bet that will merge nice-n-easy.
-    -   However, something worse than merge conflicts is confusing users.
-        -   If completely munging one of the original files will lower the number of support issues... do it!
-            -   Example: renaming all the original `create-react-app` scripts by prefixing them with "cra" (e.g. crastart, craeject, etc.)
-                will stop users that are used to typing `yarn start` (you should be using `yarn wpstart` instead) and muscle memory-izing
-                themselves into confusion.
-
 ## Installation
 
 `npm install -g @devloco/create-react-wptheme`
@@ -111,6 +85,32 @@ For example:
     -   Then run `npm run wpbuild` (or `yarn wpbuild`)
     -   Note that if you then view your theme on your dev server, it will most likely be broken. But will hopefully look
         correct on your production server.
+
+## Goals
+
+-   Remove WebPackDevServer and use your WordPress dev server instead.
+    -   Also, do not proxy the WordPress server.
+    -   This has many benefits:
+        -   One: Never CORS me again.
+        -   Two: Never CORS me again.
+            -   Just a little _Pacific Rim_ joke for ya.
+                -   Just a little _Thor: Ragnarok_ joke for ya.
+        -   I mean, really, do you need more reasons than avoiding CORS?
+-   No need for any `wp_enqueue_script` stuff.
+-   Maintain feature parity(ish) with `create-react-app`
+    -   Things like create-react-app's Error Overlay stuff isn't implemented here yet.
+        -   But unlike some other projects I've looked at, since CORS isn't a problem, the only thing stopping me from implementing the Error Overlay is time.
+-   Touch the original `react-scripts` as little as possible.
+    -   Add new files where possible.
+    -   This will make merges easier.
+        -   Don't laugh at things like the "return" jammed right in the middle of `init.js`.
+            -   [line 113](https://github.com/devloco/react-scripts-wptheme/blob/master/scripts/init.js)
+            -   Seriously, I have no idea what the next version of `react-scripts` is going to look like, but I bet that will merge nice-n-easy.
+    -   However, something worse than merge conflicts is confusing users.
+        -   If completely munging one of the original files will lower the number of support issues... do it!
+            -   Example: renaming all the original `create-react-app` scripts by prefixing them with "cra" (e.g. crastart, craeject, etc.)
+                will stop users that are used to typing `yarn start` (you should be using `yarn wpstart` instead) and muscle memory-izing
+                themselves into confusion.
 
 ## TODO
 
