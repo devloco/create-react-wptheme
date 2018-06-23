@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-present devloco
+ * Copyright (c) 2018-present devloco
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -50,7 +50,14 @@ const packageJson = require("./package.json");
 
 // Check this!!!!
 const getScriptsPath = function() {
-    return scriptsFromGit();
+    return scriptsFromNpm();
+};
+
+const scriptsFromNpm = function() {
+    return {
+        scriptsPath: "@devloco/react-scripts-wptheme",
+        callback: function() {}
+    };
 };
 
 const scriptsFromGit = function() {
@@ -61,7 +68,7 @@ const scriptsFromGit = function() {
     console.log(chalk.magenta("Cloning react-scripts-wptheme from GitHub..."));
     execSync("git clone https://github.com/devloco/react-scripts-wptheme.git");
     process.chdir("..");
-    let scriptsPath = path.join(tempPath, "react-scripts-wptheme");
+    let scriptsPath = "file:" + path.join(tempPath, "react-scripts-wptheme");
     return {
         scriptsPath: scriptsPath,
         callback: function() {
@@ -72,7 +79,7 @@ const scriptsFromGit = function() {
 
 const scriptsFromFile = function() {
     return {
-        scriptsPath: "E:\\WPDev\\github\\devloco\\react-scripts-wptheme",
+        scriptsPath: "file:E:\\WPDev\\github\\devloco\\react-scripts-wptheme",
         callback: function() {}
     };
 };
@@ -86,9 +93,10 @@ const program = new commander.Command(packageJson.name)
     .action((name) => {
         projectName = name;
     })
-    .option("--verbose", "force create-react-app to print additional logs (NOTE: create-react-wptheme is always verbose)")
     .option("--info", "print environment debug info (ignore 'package.json not found' errors)")
     .option("--use-npm", "force downloading packages using npm instead of yarn (if both are installed)")
+    .option("--verbose", "force create-react-app to print additional logs (NOTE: create-react-wptheme is always verbose)")
+    .option("--version", "print version")
     .allowUnknownOption()
     .parse(process.argv);
 
@@ -249,7 +257,7 @@ function createReactApp(appName, useNpm, verbose) {
 
         let scriptsPath = getScriptsPath();
         args.push("--scripts-version");
-        args.push("file:" + scriptsPath.scriptsPath);
+        args.push(scriptsPath.scriptsPath);
 
         const child = spawn(command, args, { stdio: "inherit" });
         child.on("close", (code) => {
