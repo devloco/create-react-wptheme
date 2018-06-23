@@ -34,33 +34,12 @@ development server instead of the Webpack Dev Server.**
 
 ## Installation
 
-<span style="color:red;">**_This isn't published to NPM yet_**</span>, but if you're willing to do some extra work, this is starting to look like something useful now.
-Also **I haven't tested it in OSX or any other form of \*nix.** But I've been mindful of it during coding, so hopefully it works.
-I'll test it in Linux before I publish it to NPM.
-
-Here are the steps to install:
-
--   When this project gets published to NPM, you'll no longer need to do the following steps. See TODO list below.
--   First create the `create-react-wptheme` executable using npm:
-    -   You need git and npm installed.
-    -   Open a command prompt.
-    -   Clone this repo into a temp folder:
-        -   Windows: `md temp && cd temp`
-        -   Mac or \*nix: `mkdir temp && cd temp`
-        -   `git clone https://github.com/devloco/create-react-wptheme.git`
-    -   Change dir into the create-react-wptheme package:
-        -   `cd create-react-wptheme`
-    -   Use npm to create the executable:
-        -   `npm link`
-    -   **Don't delete the temp/repo folder until you're done using the `create-react-wptheme` executable.**
+`npm install -g @devloco/create-react-wptheme`
 
 ## Usage
 
 Now you can create a WordPress theme using the `create-react-wptheme` executable:
 
--   You need git and npm installed.
-    -   The `create-react-wptheme` executable pulls [react-scripts-wptheme](https://github.com/devloco/react-scripts-wptheme) from Git.
-    -   Non-Git version coming soon. See TODO list below.
 -   Make sure your WordPress server is up and running.
 -   Change dir into your WordPress themes folder (**this is just an example, use your real themes folder**).
     -   Windows: `cd C:\xampp\htdocs\wordpress\wp-content\themes`
@@ -73,9 +52,9 @@ Now you can create a WordPress theme using the `create-react-wptheme` executable
     -   or if you have yarn installed:
     -   `yarn wpstart`
 -   That sets up the theme so that it can be seen in the WordPress admin area.
-    -   Go there now and set your site to use this theme.
+    -   **Go there now and set your WordPress site to use this theme.**
 -   View the site in your browser with the new theme.
-    -   It does some extra setup via PHP.
+    -   **You must do this as it does some extra setup via PHP.**
     -   When that's done the theme tells you to `Please restart the Nodejs watcher now...`
     -   To do that, go back to your command prompt where you first ran `npm run wpstart` or `yarn wpstart` and rerun that same command again.
 -   In a few seconds you should see your browser load with the standard create-react-app page, but it's running as a WordPress theme!
@@ -153,7 +132,7 @@ For example:
 -   ~~After successful compilation, add the same console message about the dev build not being optimized:~~
     -   ~~Note that the development build is not optimized. To create a production build, use yarn build.~~
 -   Test with Linux.
--   Publish to NPM.
+-   ~~Publish to NPM.~~
 
 ## Acknowledgements
 
