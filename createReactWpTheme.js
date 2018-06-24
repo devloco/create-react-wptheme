@@ -123,8 +123,8 @@ if (typeof projectName === "undefined") {
 createApp(projectName, program.useNpm, program.verbose);
 
 function createApp(name, useNpm, verbose) {
-    if (!semver.satisfies(process.version, ">=6.0.0")) {
-        console.log(chalk.yellow(`You are using Node ${process.version}. Please update to Node 6 or higher for the best experience.\n`));
+    if (!semver.satisfies(process.version, ">=8.0.0")) {
+        console.log(chalk.yellow(`You are using Node ${process.version}. Please update to Node 8 or higher for the best experience.\n`));
         process.exit(1);
     }
 
@@ -139,11 +139,11 @@ function createApp(name, useNpm, verbose) {
         }
     }
 
-    const gitInfo = checkGitVersion();
-    if (!gitInfo.hasMinGit) {
-        console.log(chalk.yellow(`You need Git installed to use this version of create-react-wptheme. Non-Git version coming soon.`));
-        process.exit(1);
-    }
+    // const gitInfo = checkGitVersion();
+    // if (!gitInfo.hasMinGit) {
+    //     console.log(chalk.yellow(`You need Git installed to use this version of create-react-wptheme. Non-Git version coming soon.`));
+    //     process.exit(1);
+    // }
 
     const root = path.resolve(name);
     const appName = path.basename(root);
