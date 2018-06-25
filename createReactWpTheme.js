@@ -209,8 +209,10 @@ function abortCommand(additonalMsg) {
 
 function createReactApp(appName, useNpm, verbose) {
     return new Promise((resolve, reject) => {
-        let command = "npx create-react-app";
-        let args = [appName];
+        let command = "npx";
+        let args = [];
+        args.push("create-react-app");
+        args.push(appName);
 
         if (verbose) {
             args.push("--verbose");
@@ -224,18 +226,23 @@ function createReactApp(appName, useNpm, verbose) {
         args.push("--scripts-version");
         args.push(scriptsPath.scriptsPath);
 
-        const child = spawn(command, args, { stdio: "inherit" });
-        child.on("close", (code) => {
-            if (code !== 0) {
-                reject({
-                    command: `${command} ${args.join(" ")}`
-                });
-                return;
-            }
+        const child = spawn(command, args, { stdio: "inherit" })
+            .on("error", function(err) {
+                console.log(`${command} ${args.join(" ")}`);
+                throw err;
+            })
+            .on("close", (code) => {
+                if (code !== 0) {
+                    reject({
+                        command: `${command} ${args.join(" ")}`
+                    });
 
-            scriptsPath.callback();
-            resolve();
-        });
+                    return;
+                }
+
+                scriptsPath.callback();
+                resolve();
+            });
     });
 }
 
