@@ -162,7 +162,6 @@ function createApp(name, useNpm, verbose) {
 
 function run(root, appName, originalDirectory, verbose, useNpm, useYarn) {
     const packageToInstall = "create-react-app";
-    const allDependencies = [packageToInstall];
 
     return Promise.resolve(packageToInstall)
         .then((packageName) =>
@@ -176,6 +175,7 @@ function run(root, appName, originalDirectory, verbose, useNpm, useYarn) {
                 abortCommand(chalk.yellow("You appear to be offline."));
             }
 
+            let packageName = info.packageName;
             return createReactApp("react-src", useNpm, verbose).then(() => packageName);
         })
         .catch((reason) => {
@@ -210,6 +210,7 @@ function abortCommand(additonalMsg) {
 function createReactApp(appName, useNpm, verbose) {
     return new Promise((resolve, reject) => {
         let command = "npx";
+
         let args = [];
         args.push("create-react-app");
         args.push(appName);
@@ -228,7 +229,7 @@ function createReactApp(appName, useNpm, verbose) {
 
         const child = spawn(command, args, { stdio: "inherit" })
             .on("error", function(err) {
-                console.log(`${command} ${args.join(" ")}`);
+                console.log(`createReactWpTheme.js ERROR for command: ${command} ${args.join(" ")}`);
                 throw err;
             })
             .on("close", (code) => {
