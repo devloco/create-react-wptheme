@@ -1,6 +1,6 @@
 {
     "name": "@devloco/create-react-wptheme",
-    "version": "0.5.4",
+    "version": "0.5.5",
     "description": "Create React WP themes with no build configuration.",
     "main": "index.js",
     "scripts": {
