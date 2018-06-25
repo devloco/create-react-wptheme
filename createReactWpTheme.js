@@ -139,12 +139,6 @@ function createApp(name, useNpm, verbose) {
         }
     }
 
-    // const gitInfo = checkGitVersion();
-    // if (!gitInfo.hasMinGit) {
-    //     console.log(chalk.yellow(`You need Git installed to use this version of create-react-wptheme. Non-Git version coming soon.`));
-    //     process.exit(1);
-    // }
-
     const root = path.resolve(name);
     const appName = path.basename(root);
     checkAppName(appName);
@@ -178,73 +172,44 @@ function run(root, appName, originalDirectory, verbose, useNpm, useYarn) {
             }))
         )
         .then((info) => {
-            const isOnline = info.isOnline;
-            const packageName = info.packageName;
-            console.log(`Installing ${chalk.cyan("create-react-app")}.`);
-            console.log();
+            if (!info.isOnline) {
+                abortCommand(chalk.yellow("You appear to be offline."));
+            }
 
-            return installCreateReactApp(root, allDependencies, verbose, useYarn, isOnline).then(() => packageName);
-        })
-        .then((packageName) => {
             return createReactApp("react-src", useNpm, verbose).then(() => packageName);
         })
         .catch((reason) => {
             console.log();
             console.log("Aborting installation.");
+
             if (reason.command) {
                 console.log(`  ${chalk.cyan(reason.command)} has failed.`);
             } else {
-                console.log(chalk.red("Unexpected error. Please report it as a bug:"));
-                console.log(reason);
+                console.log(chalk.red("Unexpected error."), reason);
+                console.log("Please report it as a bug here:");
+                console.log("https://github.com/devloco/create-react-wptheme/issues");
             }
+
             console.log();
             console.log("Done.");
             process.exit(1);
         });
 }
 
-function installCreateReactApp(root, dependencies, verbose, useYarn, isOnline) {
+function abortCommand(additonalMsg) {
     return new Promise((resolve, reject) => {
-        let command;
-        let args;
-        if (useYarn) {
-            command = "yarnpkg";
-            args = ["global", "add"];
-            if (!isOnline) {
-                args.push("--offline");
-            }
-            [].push.apply(args, dependencies);
-
-            if (!isOnline) {
-                console.log(chalk.yellow("You appear to be offline."));
-                console.log(chalk.yellow("Falling back to the local Yarn cache."));
-                console.log();
-            }
-        } else {
-            command = "npm";
-            args = ["install", "-g"].concat(dependencies);
+        console.log(chalk.red("Aborting installation."));
+        if (typeof additonalMsg === "string") {
+            console.log(additonalMsg);
         }
 
-        if (verbose) {
-            args.push("--verbose");
-        }
-
-        const child = spawn(command, args, { stdio: "inherit" });
-        child.on("close", (code) => {
-            if (code !== 0) {
-                reject({
-                    command: `${command} ${args.join(" ")}`
-                });
-                return;
-            }
-            resolve();
-        });
+        process.exit(0);
     });
 }
 
 function createReactApp(appName, useNpm, verbose) {
     return new Promise((resolve, reject) => {
-        let command = "create-react-app";
+        let command = "npx create-react-app";
         let args = [appName];
 
         if (verbose) {
@@ -289,25 +254,6 @@ function deleteFolderRecursive(path) {
 
         fs.rmdirSync(path);
     }
-}
-
-function checkGitVersion() {
-    let hasMinGit = false;
-    let gitVersion = null;
-    try {
-        gitVersion = execSync("git --version")
-            .toString()
-            .trim();
-        //hasMinGit = semver.gte(gitVersion, "2.17.0");
-        hasMinGit = true;
-    } catch (err) {
-        // ignore
-    }
-
-    return {
-        hasMinGit: hasMinGit,
-        gitVersion: gitVersion
-    };
 }
 
 function checkNpmVersion() {
