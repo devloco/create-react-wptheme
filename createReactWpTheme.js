@@ -120,6 +120,7 @@ if (typeof projectName === "undefined") {
     process.exit(1);
 }
 
+console.log(program.name() + " version: " + chalk.magenta(packageJson.version));
 createApp(projectName, program.useNpm, program.verbose);
 
 function createApp(name, useNpm, verbose) {
