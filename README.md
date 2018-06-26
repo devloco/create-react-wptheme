@@ -109,28 +109,6 @@ For example:
                 will stop users that are used to typing `yarn start` (you should be using `yarn wpstart` instead) and muscle memory-izing
                 themselves into confusion.
 
-## TODO
-
--   ~~Update style.css with the name of your theme so that you can find it easier in the WP Admin area.~~
--   ~~Automatically launch the browser to the correct URL to view your WP site when you run `npm wpstart` or `yarn wpstart`.~~
--   ~~Automatically reload the browser each time you save a file... the same as create-react-app does for non-WordPress apps.~~
-    -   ~~including js, css, and php files in the public folder~~
--   ~~Make some things configurable by adding `react-src/user.dev.json` and `react-src/user.prod.json` files:~~
-    -   ~~Modify the additional file watcher globs. Current default: `["./public/**/*.js", "./public/**/*.css", "./public/**/*.php"]`~~
-    -   ~~Disable browser refresh client injection into index.php.~~
-    -   ~~Set browser refresh port (and maybe server name).~~
-    -   ~~Set touchFileName used by fileWatcherPlugin.wptheme.js.~~
-    -   ~~Prod homepage: just in case the user wants it set to something different during a `wpbuild`~~
--   ~~Get wpbuild working.~~
--   ~~Clean up the GitHub repos: put `create-react-wptheme` and `react-scripts-wptheme` into their own repos.~~
-    -   Ha! After doing that I discovered Lerna.
-        -   https://github.com/lerna/lerna
-        -   So let's Lerna-ify the GitHub repos back into a single repo
--   ~~After successful compilation, add the same console message about the dev build not being optimized:~~
-    -   ~~Note that the development build is not optimized. To create a production build, use yarn build.~~
--   ~~Test with Linux.~~
--   ~~Publish to NPM.~~
-
 ## Acknowledgements
 
 I'm grateful to the authors of existing related projects for their ideas and collaboration:
