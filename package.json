@@ -11,7 +11,19 @@
         "url": "git+https://github.com/devloco/create-react-wptheme.git"
     },
     "keywords": [
-        "react"
+        "wordpress",
+        "create-react-app",
+        "wordpress-theme",
+        "wordpress-development",
+        "wordpress-starter-theme",
+        "wordpress-api",
+        "reactjs",
+        "react",
+        "react-theme",
+        "wordpress-server",
+        "react-tutorial",
+        "react-wordpress-themes",
+        "php"
     ],
     "author": "devloco",
     "license": "MIT",
