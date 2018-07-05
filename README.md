@@ -14,9 +14,9 @@ To create a WordPress theme using the `create-react-wptheme`, follow these steps
 -   Change dir into your WordPress themes folder (**this is just an example, use your real themes folder**).
     -   Windows: `cd C:\xampp\htdocs\wordpress\wp-content\themes`
     -   Mac or \*nix: `cd /xampp/htdocs/wordpress/wp-content/themes`
--   Use `npx @devloco/create-react-wptheme` to make a new theme
+-   Use `npx create-react-wptheme` to make a new theme
     -   For example: (**replace "my_react_theme" with whatever you want your theme to be named**):
-    -   `npx @devloco/create-react-wptheme my_react_theme`
+    -   `npx create-react-wptheme my_react_theme`
 -   When it finishes it'll tell you to change into your new theme's folder and run the Nodejs watcher (replace "my_react_theme" with the same name you used in the previous step):
     -   `cd my_react_theme/react-src`
     -   `npm run wpstart`
