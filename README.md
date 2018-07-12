@@ -83,6 +83,22 @@ For example:
     -   Note that if you then view your theme on your dev server, it will most likely be broken. But will hopefully look
         correct on your production server.
 
+### HTTPS/SSL Support
+
+Obviously, running your WordPress dev server under SSL is no big deal. The theme will just work.
+
+The problem lies in the "Browser Refresh Server." It's a bit of custom code that tells the browser to refresh once Webpack has successfully built
+the theme after you save a file. Or in the case of a build not succeeding, it tells the client to render the Error or Warning "overlay."
+
+I haven't figured out how to get that little WebSocket server running with HTTPS/SSL. But, it's only a problem with Firefox,
+see here: [Firefox Websocket security issue](https://stackoverflow.com/questions/11768221/firefox-websocket-security-issue).
+
+So if you use Firefox, and you're not willing to change the `about:config` mentioned on that StackOverflow page, then you'll need to switch to Chrome
+or some other browser that allows a non-SSL WebSocket to run on a page served over HTTPS.
+
+Any help with getting this little server running with SSL would be much appreciated (the code is here: [react-scripts-wptheme-utils:wpThemeServer.js](https://github.com/devloco/react-scripts-wptheme-utils/blob/master/wpThemeServer.js) -- I'm open to using a completely different library or technology,
+as long as we can tell the browser to refresh and print errors, and we don't flood the "Network" tab in a browser's dev tools (e.g. no XHR polling)).
+
 ## Goals
 
 -   Remove WebPackDevServer and use your WordPress dev server instead.
