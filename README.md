@@ -111,8 +111,6 @@ as long as we can tell the browser to refresh and print errors, and we don't flo
         -   I mean, really, do you need more reasons than avoiding CORS?
 -   No need for any `wp_enqueue_script` stuff.
 -   Maintain feature parity(ish) with `create-react-app`
-    -   Things like create-react-app's Error Overlay stuff isn't implemented here yet.
-        -   But unlike some other projects I've looked at, since CORS isn't a problem, the only thing stopping me from implementing the Error Overlay is time.
 -   Touch the original `react-scripts` as little as possible.
     -   Add new files where possible.
     -   This will make merges easier.
