@@ -106,7 +106,7 @@ To configure the Browser Refresh Server to use SSL, follow these steps:
 -   Depending on which process you use to create the certificate and key, the files you created might have different extensions than those mentioned below.
     -   That's OK.
     -   Sometimes both files have a `.pem` extension, or each file has a different extension like `.crt` and `.key`.
-    -   Just be sure you know which file is the certificate and which is the key.
+    -   **Just be sure you know which file is the certificate and which is the key.**
 -   There is a file named `user.dev.json` in the folder named `react-src` in your theme.
     -   Open that file in your favorite text editor.
     -   Change the "wpThemeServer" section to look like this (make sure it is proper JSON):
