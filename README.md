@@ -77,7 +77,7 @@ For example:
     -   the homepage setting in your main package.json file will probably work just fine.
     -   The homepage line in your main package.json be something like: `"homepage": "/wordpress/wp-content/themes/<your theme's folder name>"`
 -   But you know that your production server runs WordPress from the root: http<nolink>://mycoolblog.com/
-    -   In this case you want to remove the `/wordpress` part, so set the "homepage" line in your user.prod.json file to:
+    -   In this case you want to remove the `/wordpress` part, so set the "homepage" line in your `user.prod.json` file to:
         `"homepage": "/wp-content/themes/<your theme's folder name>"`
     -   Then run `npm run wpbuild` (or `yarn wpbuild`)
     -   Note that if you then view your theme on your dev server, it will most likely be broken. But will hopefully look
@@ -85,19 +85,46 @@ For example:
 
 ### HTTPS/SSL Support
 
-Obviously, running your WordPress dev server under SSL is no big deal. The theme will just work.
+If you develop using SSL (i.e. HTTPS), then you might want to run the "Browser Refresh Server" under SSL as well. Especially if you use Firefox, see here:
+[Firefox Websocket security issue](https://stackoverflow.com/questions/11768221/firefox-websocket-security-issue).
 
-The problem lies in the "Browser Refresh Server." It's a bit of custom code that tells the browser to refresh once Webpack has successfully built
-the theme after you save a file. Or in the case of a build not succeeding, it tells the client to render the Error or Warning "overlay."
+To configure the Browser Refresh Server to use SSL, follow these steps:
 
-I haven't figured out how to get that little WebSocket server running with HTTPS/SSL. But, it's only a problem with Firefox,
-see here: [Firefox Websocket security issue](https://stackoverflow.com/questions/11768221/firefox-websocket-security-issue).
-
-So if you use Firefox, and you're not willing to change the `about:config` mentioned on that StackOverflow page, then you'll need to switch to Chrome
-or some other browser that allows a non-SSL WebSocket to run on a page served over HTTPS.
-
-Any help with getting this little server running with SSL would be much appreciated (the code is here: [react-scripts-wptheme-utils:wpThemeServer.js](https://github.com/devloco/react-scripts-wptheme-utils/blob/master/wpThemeServer.js) -- I'm open to using a completely different library or technology,
-as long as we can tell the browser to refresh and print errors, and we don't flood the "Network" tab in a browser's dev tools (e.g. no XHR polling)).
+-   These instructions use the command prompt.
+-   Assuming you've already created a theme using `create-react-wptheme`, change directory into the `react-src` folder in your theme's folder
+    -   Be sure to follow **all the instructions** under the **Usage** section at the top of this document.
+    -   Windows example: `cd C:\xampp\htdocs\wordpress\wp-content\themes\<your theme's folder name>\react-src`
+    -   Mac or \*nix example: `cd /xampp/htdocs/wordpress/wp-content/themes/<your theme's folder name>/react-src`
+-   Create new folder to hold you're development SSL certificate and key.
+    -   All OSes: `mkdir ssl`
+-   Change directory into the `ssl` folder
+    -   All OSes `cd ssl`
+-   Then create the SSL certificate and key.
+    -   Windows, see here: https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development
+    -   Mac, see here: https://ksearch.wordpress.com/2017/08/22/generate-and-import-a-self-signed-ssl-certificate-on-mac-osx-sierra/
+    -   \*nix, see here (**also works with Linux Subsystem for Windows 10**): https://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl
+-   Depending on which process you use to create the certificate and key, the files you created might have different extensions than those mentioned below.
+    -   That's OK.
+    -   Sometimes both files have a `.pem` extension, or each file has a different extension like `.crt` and `.key`.
+    -   Just be sure you know which file is the certificate and which is the key.
+-   There is a file named `user.dev.json` in the folder named `react-src` in your theme.
+    -   Open that file in your favorite text editor.
+    -   Change the "wpThemeServer" section to look like this (make sure it is proper JSON):
+    -   `"wpThemeServer": { "enable": true, "host": "127.0.0.1", "port": 8090, "sslCert": "ssl/localhost.crt", "sslKey": "ssl/localhost.key", "watchFile": "../index.php" },`
+    -   **NOTE** the `sslCert` and `sslKey` items. Make sure the values point to your SSL certificate and key files.
+    -   The paths to those files can be **full paths** or **relative paths** to the `react-src` folder (as shown above).
+    -   I like to set the `host` to `127.0.0.1` instead of "localhost". The numeric address gets special treatment at the OS level as being mostly safe.
+-   Back in your command prompt, change dir back to the `react-src` folder.
+    -   All OSes: `cd ..`
+-   Start Node/Webpack JS watcher as you normally would:
+    -   All OSes: `npm run start`
+    -   Or if you use Yarn: `yarn start`
+    -   Your theme should open in a new browser tab
+-   If you need to add an SSL exception to your browser for your new certificate, there is a page running over HTTPS at the "host" and "port" you set in `user.dev.json` above.
+    -   For example, if you're using host `127.0.0.1` and port `8090` as shown above, then open your browser to:
+        -   https<nolink>://127.0.0.1:8090/
+    -   From there you'll get the standard browser warning about self-signed certificates and get the option to add an exception.
+    -   Once you've finished adding an exception to your browser, you'll need to refresh the tab with your development theme to force a reconnect to the Browser Refresh Server
 
 ## Goals
 
