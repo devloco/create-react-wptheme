@@ -26,6 +26,10 @@ To create a WordPress theme using the `create-react-wptheme`, follow these steps
     -   **Go there now and set your WordPress site to use this theme.**
 -   View the site in your browser with the new theme.
     -   **You must do this as it does some extra setup via PHP.**
+    -   **If you get PHP errors, most likely your web server doesn't have write access to your theme.**
+        -   Write access for your web server is only needed during this setup step.
+        -   **You can revoke write access after the setup has completed.**
+        -   Interested (paranoid?) about what it's doing? Check out the file: `<your theme folder name>/index.php`
     -   When that's done the theme tells you to `Please restart the Nodejs watcher now...`
     -   To do that, go back to your command prompt where you first ran `npm run wpstart` or `yarn wpstart` and rerun that same command again.
 -   In a few seconds you should see your browser load with the standard create-react-app page, but it's running as a WordPress theme!
@@ -95,7 +99,7 @@ To configure the Browser Refresh Server to use SSL, follow these steps:
     -   Be sure to follow **all the instructions** under the **Usage** section at the top of this document.
     -   Windows example: `cd C:\xampp\htdocs\wordpress\wp-content\themes\<your theme's folder name>\react-src`
     -   Mac or \*nix example: `cd /xampp/htdocs/wordpress/wp-content/themes/<your theme's folder name>/react-src`
--   Create new folder to hold you're development SSL certificate and key.
+-   Create a new folder to hold you're development SSL certificate and key.
     -   All OSes: `mkdir ssl`
 -   Change directory into the `ssl` folder
     -   All OSes `cd ssl`
@@ -124,7 +128,7 @@ To configure the Browser Refresh Server to use SSL, follow these steps:
     -   For example, if you're using host `127.0.0.1` and port `8090` as shown above, then open your browser to:
         -   https<nolink>://127.0.0.1:8090/
     -   From there you'll get the standard browser warning about self-signed certificates and get the option to add an exception.
-    -   Once you've finished adding an exception to your browser, you'll need to refresh the tab with your development theme to force a reconnect to the Browser Refresh Server
+    -   Once you've finished adding an exception to your browser, you'll need to refresh the tab with your development theme to force a reconnect to the Browser Refresh Server.
 
 ## Goals
 
