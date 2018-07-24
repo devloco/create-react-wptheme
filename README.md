@@ -30,7 +30,7 @@ To create a WordPress theme using the `create-react-wptheme`, follow these steps
     -   To do that, go back to your command prompt where you first ran `npm run wpstart` or `yarn wpstart` and rerun that same command again.
 -   In a few seconds you should see your browser load with the standard create-react-app page, but it's running as a WordPress theme!
 
-## Coding Notes
+## Coding with React
 
 ### React Tutorials
 
@@ -112,7 +112,7 @@ To configure the Browser Refresh Server to use SSL, follow these steps:
     -   Change the "wpThemeServer" section to look like this (make sure it is proper JSON):
     -   `"wpThemeServer": { "enable": true, "host": "127.0.0.1", "port": 8090, "sslCert": "ssl/localhost.crt", "sslKey": "ssl/localhost.key", "watchFile": "../index.php" },`
     -   **NOTE** the `sslCert` and `sslKey` items. Make sure the values point to your SSL certificate and key files.
-    -   The paths to those files can be **full paths** or **relative paths** to the `react-src` folder (as shown above).
+    -   The paths to those files can be **full paths** or **relative paths** from the `react-src` folder (as shown above).
     -   I like to set the `host` to `127.0.0.1` instead of "localhost". The numeric address gets special treatment at the OS level as being mostly safe.
 -   Back in your command prompt, change dir back to the `react-src` folder.
     -   All OSes: `cd ..`
