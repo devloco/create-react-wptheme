@@ -104,7 +104,7 @@ To configure the Browser Refresh Server to use SSL, follow these steps:
 -   Change directory into the `ssl` folder
     -   All OSes `cd ssl`
 -   Then create the SSL certificate and key.
-    -   Windows, see here: https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development
+    -   Windows: Install the [Linux Subsystem for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10), then use the \*nix instructions below.
     -   Mac, see here: https://ksearch.wordpress.com/2017/08/22/generate-and-import-a-self-signed-ssl-certificate-on-mac-osx-sierra/
     -   \*nix, see here (**also works with Linux Subsystem for Windows 10**): https://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl
 -   Depending on which process you use to create the certificate and key, the files you created might have different extensions than those mentioned below.
