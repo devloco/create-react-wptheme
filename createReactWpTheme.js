@@ -78,8 +78,10 @@ const scriptsFromGit = function() {
 };
 
 const scriptsFromFile = function() {
-    return {
-        scriptsPath: "file:E:\\WPDev\\github\\devloco\\react-scripts-wptheme",
+  // let filePath = "file:E:\\WPDev\\github\\devloco\\react-scripts-wptheme";
+  let filePath = "file:/mnt/e/WPDev/github/devloco/create-react-app/packages/react-scripts";
+  return {
+        scriptsPath: filePath,
         callback: function() {}
     };
 };
