@@ -65,10 +65,10 @@ const scriptsFromGit = function() {
     fs.ensureDirSync(tempFolderName);
     process.chdir(tempFolderName);
     const tempPath = process.cwd();
-    console.log(chalk.magenta("Cloning react-scripts-wptheme from GitHub..."));
-    execSync("git clone https://github.com/devloco/react-scripts-wptheme.git");
+    console.log(chalk.magenta("Cloning @devloco/create-react-app/react-scripts from GitHub..."));
+    execSync("git clone https://github.com/devloco/create-react-app.git");
     process.chdir("..");
-    let scriptsPath = "file:" + path.join(tempPath, "react-scripts-wptheme");
+    let scriptsPath = "file:" + path.join(tempPath, "create-react-app", "packages", "react-scripts");
     return {
         scriptsPath: scriptsPath,
         callback: function() {
