@@ -60,6 +60,8 @@ const _getScriptsPath = function() {
 };
 
 const scriptsFromNpm = function() {
+  //path: "@devloco/react-scripts-test",
+  //path: "@devloco/react-scripts-wptheme",
   return {
     path: "@devloco/react-scripts-wptheme",
     callback: function() {}
