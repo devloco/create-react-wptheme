@@ -56,7 +56,7 @@ const _createReactAppVersion = _wpThemeVersion.split('-')[0];
 
 // Check this!!!!
 const _getScriptsPath = function() {
-  return scriptsFromFile();
+  return scriptsFromNpm();
 };
 
 const scriptsFromNpm = function() {
@@ -191,7 +191,6 @@ function createApp(
   fs.ensureDirSync(name);
 
   console.log(`Creating a new React WP theme in ${chalk.green(root)}.`);
-  //printCreateReactAppVersion();
   console.log();
 
   const useYarn = useNpm ? false : shouldUseYarn();
@@ -295,7 +294,7 @@ function createReactApp(createWpThemeReactRoot, appName, version, verbose, origi
       let command = "npx";
 
       let args = [];
-      args.push("create-react-app@" + _createReactAppVersion);
+      args.push(`create-react-app@">=` + _createReactAppVersion + `"`);
       args.push(createWpThemeReactRoot);
 
       if (verbose) {
@@ -466,12 +465,6 @@ function checkIfOnline(useYarn) {
       }
     });
   });
-}
-
-function printCreateReactAppVersion() {
-  console.log(chalk.green(`Checking create-react-app version, please wait...`));
-  let craVersion = execSync(`npx create-react-app@${_createReactAppVersion} --version`);
-  console.log(chalk.cyan(`Using create-react-app version: ${craVersion}`));
 }
 
 function deleteFolderRecursive(path) {
