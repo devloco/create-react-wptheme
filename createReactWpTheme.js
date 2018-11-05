@@ -294,7 +294,7 @@ function createReactApp(createWpThemeReactRoot, appName, version, verbose, origi
       let command = "npx";
 
       let args = [];
-      args.push(`create-react-app@">=` + _createReactAppVersion + `"`);
+      args.push("create-react-app");
       args.push(createWpThemeReactRoot);
 
       if (verbose) {
