@@ -215,8 +215,9 @@ function createApp(
   const useYarn = useNpm ? false : shouldUseYarn();
   const originalDirectory = process.cwd();
 
-  process.chdir(appName); // change into the newly created folder, then run create-react-app.
+  process.chdir(root); // change into the newly created folder, then run create-react-app.
 
+  useYarn = false; // always use NPM for now.
   createWpTheme(
     root,
     appName,
@@ -278,7 +279,6 @@ function createWpTheme(
             usePnp,
             useTypescript
           );
-
       })
       .catch((reason) => {
           console.log();
@@ -344,6 +344,9 @@ function createReactApp(createWpThemeReactRoot, appName, version, verbose, origi
               scriptsPath.callback();
               resolve();
           });
+  })
+  .catch((code) => {
+    reject(code);
   });
 }
 
