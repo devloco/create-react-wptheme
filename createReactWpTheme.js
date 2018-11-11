@@ -69,6 +69,23 @@ const scriptsFromNpm = function() {
 };
 
 const scriptsFromGit = function() {
+  const deleteFolderRecursive = (path) => {
+    if (fs.existsSync(path)) {
+        fs.readdirSync(path).forEach(function(file) {
+            let curPath = path + "/" + file;
+            if (fs.statSync(curPath).isDirectory()) {
+                // recurse
+                deleteFolderRecursive(curPath);
+            } else {
+                // delete file
+                fs.unlinkSync(curPath);
+            }
+        });
+
+        fs.rmdirSync(path);
+    }
+  }
+
   const tempFolderName = "temp";
   fs.ensureDirSync(tempFolderName);
   process.chdir(tempFolderName);
@@ -197,17 +214,8 @@ function createApp(
 
   const useYarn = useNpm ? false : shouldUseYarn();
   const originalDirectory = process.cwd();
-  process.chdir(root);
-  if (!useYarn && !checkThatNpmCanReadCwd()) {
-    process.exit(1);
-  }
 
-  if (useYarn) {
-    fs.copySync(
-      require.resolve('./yarn.lock.cached'),
-      path.join(root, 'yarn.lock')
-    );
-  }
+  process.chdir(appName); // change into the newly created folder, then run create-react-app.
 
   createWpTheme(
     root,
@@ -347,6 +355,7 @@ function checkAppName(appName) {
         `"${appName}"`
       )} because of npm naming restrictions:`
     );
+
     printValidationResults(validationResult.errors);
     printValidationResults(validationResult.warnings);
     process.exit(1);
@@ -467,21 +476,4 @@ function checkIfOnline(useYarn) {
       }
     });
   });
-}
-
-function deleteFolderRecursive(path) {
-  if (fs.existsSync(path)) {
-      fs.readdirSync(path).forEach(function(file) {
-          let curPath = path + "/" + file;
-          if (fs.statSync(curPath).isDirectory()) {
-              // recurse
-              deleteFolderRecursive(curPath);
-          } else {
-              // delete file
-              fs.unlinkSync(curPath);
-          }
-      });
-
-      fs.rmdirSync(path);
-  }
 }
