@@ -208,11 +208,11 @@ function createApp(
   console.log();
 
   let useYarn = useNpm ? false : shouldUseYarn();
-  const originalDirectory = process.cwd();
+  useYarn = false; // always use NPM for now.
 
+  const originalDirectory = process.cwd();
   process.chdir(root); // change into the newly created folder, then run create-react-app.
 
-  useYarn = false; // always use NPM for now.
   createWpTheme(
     root,
     appName,

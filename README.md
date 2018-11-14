@@ -1,6 +1,6 @@
 # Create React WP Theme
 
-*UPDATED* to support create-react-app v2! (TypeScript doesn't work yet)
+*UPDATED* to support create-react-app v2, including TypeScript!
 
 The intention of this project is to maintain a set of custom `react-scripts` that will allow you to
 create React WordPress themes as easily as `create-react-app` allows other devs to create their apps.
@@ -19,11 +19,11 @@ To create a WordPress theme using the `create-react-wptheme`, follow these steps
 -   Use `npx create-react-wptheme` to make a new theme
     -   For example: (**replace "my_react_theme" with whatever you want your theme to be named**):
     -   `npx create-react-wptheme my_react_theme`
+        - If you want to use TypeScript, then the command would be:
+        - `npx create-react-wptheme my_react_theme --typescript`
 -   When it finishes it'll tell you to change into your new theme's folder and run the Nodejs watcher (replace "my_react_theme" with the same name you used in the previous step):
     -   `cd my_react_theme/react-src`
     -   `npm run wpstart`
-    -   or if you have yarn installed:
-    -   `yarn wpstart`
 -   That sets up the theme so that it can be seen in the WordPress admin area.
     -   **Go there now and set your WordPress site to use this theme.**
 -   View the site in your browser with the new theme.
@@ -33,7 +33,7 @@ To create a WordPress theme using the `create-react-wptheme`, follow these steps
         -   **You can revoke write access after the setup has completed.**
         -   Interested (paranoid?) about what it's doing? Check out the file: `<your theme folder name>/index.php`
     -   When that's done the theme tells you to `Please restart the Nodejs watcher now...`
-    -   To do that, go back to your command prompt where you first ran `npm run wpstart` or `yarn wpstart` and rerun that same command again.
+    -   To do that, go back to your command prompt where you first ran `npm run wpstart` and rerun that same command again.
 -   In a few seconds you should see your browser load with the standard create-react-app page, but it's running as a WordPress theme!
 
 ## Coding with React
@@ -72,7 +72,7 @@ that you can mess with if you need to.
 
 ### Build Configuration
 
-The `react-src/user.prod.json` configuration file is read when you run `npm run wpbuild` (or `yarn wpbuild`). The only option in there is setting the "homepage"
+The `react-src/user.prod.json` configuration file is read when you run `npm run wpbuild`. The only option in there is setting the "homepage"
 which controls the relative linking to files in your theme. The "homepage" setting in your main `package.json` file is used during development (and build by default).
 During development, this is probably what you want. But if you know your production server will have a different root, then you can set the homepage to be different during
 a production build.
@@ -85,7 +85,7 @@ For example:
 -   But you know that your production server runs WordPress from the root: http<nolink>://mycoolblog.com/
     -   In this case you want to remove the `/wordpress` part, so set the "homepage" line in your `user.prod.json` file to:
         `"homepage": "/wp-content/themes/<your theme's folder name>"`
-    -   Then run `npm run wpbuild` (or `yarn wpbuild`)
+    -   Then run `npm run wpbuild`
     -   Note that if you then view your theme on your dev server, it will most likely be broken. But will hopefully look
         correct on your production server.
 
@@ -124,7 +124,6 @@ To configure the Browser Refresh Server to use SSL, follow these steps:
     -   All OSes: `cd ..`
 -   Start Node/Webpack JS watcher as you normally would:
     -   All OSes: `npm run start`
-    -   Or if you use Yarn: `yarn start`
     -   Your theme should open in a new browser tab
 -   If you need to add an SSL exception to your browser for your new certificate, there is a page running over HTTPS at the "host" and "port" you set in `user.dev.json` above.
     -   For example, if you're using host `127.0.0.1` and port `8090` as shown above, then open your browser to:
@@ -147,14 +146,10 @@ To configure the Browser Refresh Server to use SSL, follow these steps:
 -   Touch the original `react-scripts` as little as possible.
     -   Add new files where possible.
     -   This will make merges easier.
-        -   Don't laugh at things like the "return" jammed right in the middle of `init.js`.
-            -   [line 113](https://github.com/devloco/react-scripts-wptheme/blob/master/scripts/init.js)
-            -   Seriously, I have no idea what the next version of `react-scripts` is going to look like, but I bet that will merge nice-n-easy.
     -   However, something worse than merge conflicts is confusing users.
         -   If completely munging one of the original files will lower the number of support issues... do it!
             -   Example: renaming all the original `create-react-app` scripts by prefixing them with "cra" (e.g. crastart, craeject, etc.)
-                will stop users that are used to typing `yarn start` (you should be using `yarn wpstart` instead) and muscle memory-izing
-                themselves into confusion.
+                will stop ensure users don't accidentally start the Webpack Dev Server, but still allows them to.
 
 ## Acknowledgements
 
