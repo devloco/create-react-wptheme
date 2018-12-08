@@ -57,6 +57,7 @@ const _getScriptsPath = function() {
 const scriptsFromNpm = function() {
   //path: "@devloco/react-scripts-test",
   //path: "@devloco/react-scripts-wptheme",
+  //console.log('SCRIPTS FROM NPM');
   return {
     path: "@devloco/react-scripts-wptheme",
     callback: function() {}
@@ -64,6 +65,7 @@ const scriptsFromNpm = function() {
 };
 
 const scriptsFromGit = function() {
+  console.log('SCRIPTS FROM GIT');
   const deleteFolderRecursive = (path) => {
     if (fs.existsSync(path)) {
         fs.readdirSync(path).forEach(function(file) {
@@ -98,6 +100,7 @@ const scriptsFromGit = function() {
 };
 
 const scriptsFromFile = function() {
+  console.log('SCRIPTS FROM FILE');
   // let filePath = "file:E:\\WPDev\\github\\devloco\\react-scripts-wptheme";
   let filePath = "file:/mnt/e/WPDev/github/devloco/create-react-app/packages/react-scripts";
   return {
@@ -208,7 +211,6 @@ function createApp(
   console.log();
 
   let useYarn = useNpm ? false : shouldUseYarn();
-  useYarn = false; // always use NPM for now.
 
   const originalDirectory = process.cwd();
   process.chdir(root); // change into the newly created folder, then run create-react-app.

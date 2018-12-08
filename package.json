@@ -1,6 +1,6 @@
 {
     "name": "create-react-wptheme",
-    "version": "2.1.1-wptheme-2.0.9",
+    "version": "2.1.1-wptheme-2.1.0",
     "description": "Create React WP themes with no build configuration.",
     "main": "index.js",
     "scripts": {
