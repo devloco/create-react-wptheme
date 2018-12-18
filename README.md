@@ -44,7 +44,7 @@ From within your theme's `react-src` folder, run this command at a command promp
 
 `npm install @devloco/react-scripts-wptheme@latest`
 
-If you're theme uses TypeScript, you'll need to run a second command (`create-react-wptheme` uses the Types from Facebook's React-Scripts):
+If your theme uses TypeScript, you'll need to run a second command (`create-react-wptheme` uses the Types from Facebook's React-Scripts):
 
 `npm install react-scripts@latest`
 
