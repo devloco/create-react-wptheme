@@ -36,6 +36,18 @@ To create a WordPress theme using the `create-react-wptheme`, follow these steps
     -   To do that, go back to your command prompt where you first ran `npm run wpstart` and rerun that same command again.
 -   In a few seconds you should see your browser load with the standard create-react-app page, but it's running as a WordPress theme!
 
+## Updating
+
+When new versions of `Create React WP Theme` are released, you can upgrade using a single command.
+
+From within your theme's `react-src` folder, run this command at a command prompt:
+
+`npm install @devloco/react-scripts-wptheme@latest`
+
+If you're theme uses TypeScript, you'll need to run a second command (`create-react-wptheme` uses the Types from Facebook's React-Scripts):
+
+`npm install react-scripts@latest`
+
 ## Coding with React
 
 ### React Tutorials
