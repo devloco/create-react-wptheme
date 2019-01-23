@@ -1,6 +1,6 @@
 # Create React WP Theme
 
-*UPDATED* to support create-react-app v2, including TypeScript!
+*UPDATED* to support create-react-app v2.1.3, including TypeScript!
 
 The intention of this project is to maintain a set of custom `react-scripts` that will allow you to
 create React WordPress themes as easily as `create-react-app` allows other devs to create their apps.
@@ -152,8 +152,6 @@ To configure the Browser Refresh Server to use SSL, follow these steps:
         -   Two: Never CORS me again.
             -   Just a little _Pacific Rim_ joke for ya.
                 -   Just a little _Thor: Ragnarok_ joke for ya.
-        -   I mean, really, do you need more reasons than avoiding CORS?
--   No need for any `wp_enqueue_script` stuff.
 -   Maintain feature parity(ish) with `create-react-app`
 -   Touch the original `react-scripts` as little as possible.
     -   Add new files where possible.
