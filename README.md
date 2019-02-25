@@ -1,6 +1,6 @@
 # Create React WP Theme
 
-*UPDATED* to support create-react-app v2.1.3, including TypeScript!
+`*UPDATED* to support create-react-app v2.1.5!`
 
 The intention of this project is to maintain a set of custom `react-scripts` that will allow you to
 create React WordPress themes as easily as `create-react-app` allows other devs to create their apps.
@@ -36,9 +36,9 @@ To create a WordPress theme using the `create-react-wptheme`, follow these steps
     -   To do that, go back to your command prompt where you first ran `npm run wpstart` and rerun that same command again.
 -   In a few seconds you should see your browser load with the standard create-react-app page, but it's running as a WordPress theme!
 
-## Updating
+## Updating Existing Themes
 
-When new versions of `Create React WP Theme` are released, you can upgrade using a single command.
+When new versions of `Create React WP Theme` are released, you can upgrade an existing theme using a single command.
 
 From within your theme's `react-src` folder, run this command at a command prompt:
 
