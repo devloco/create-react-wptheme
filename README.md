@@ -49,6 +49,8 @@ If your theme uses TypeScript, you'll need to run a second command (`create-reac
 
 `npm install react-scripts@latest`
 
+**Important note for Yarn users: be sure to use `yarn add` instead of `npm install` in the above commands.**
+
 ## Coding with React
 
 ### React Tutorials
