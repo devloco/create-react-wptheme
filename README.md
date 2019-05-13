@@ -1,7 +1,8 @@
 # Create React WP Theme
 
-`*UPDATED* to support create-react-app v2.1.8`
-  - [Updating Existing Themes](#updating-existing-themes)
+`*UPDATED* to support create-react-app v3.0.1`
+
+-   [Updating Existing Themes](#updating-existing-themes)
 
 The intention of this project is to maintain a set of custom `react-scripts` that will allow you to
 create React WordPress themes as easily as `create-react-app` allows other devs to create their apps.
@@ -20,8 +21,8 @@ To create a WordPress theme using the `create-react-wptheme`, follow these steps
 -   Use `npx create-react-wptheme` to make a new theme
     -   For example: (**replace "my_react_theme" with whatever you want your theme to be named**):
     -   `npx create-react-wptheme my_react_theme`
-        - If you want to use TypeScript, then the command would be:
-        - `npx create-react-wptheme my_react_theme --typescript`
+        -   If you want to use TypeScript, then the command would be:
+        -   `npx create-react-wptheme my_react_theme --typescript`
 -   When it finishes it'll tell you to change into your new theme's folder and run the Nodejs watcher (replace "my_react_theme" with the same name you used in the previous step):
     -   `cd my_react_theme/react-src`
     -   `npm run wpstart`
@@ -150,11 +151,7 @@ To configure the Browser Refresh Server to use SSL, follow these steps:
 
 -   Remove WebPackDevServer and use your WordPress dev server instead.
     -   Also, do not proxy the WordPress server.
-    -   This has many benefits:
-        -   One: Never CORS me again.
-        -   Two: Never CORS me again.
-            -   Just a little _Pacific Rim_ joke for ya.
-                -   Just a little _Thor: Ragnarok_ joke for ya.
+    -   Thus removing CORS as a concern.
 -   Maintain feature parity(ish) with `create-react-app`
 -   Touch the original `react-scripts` as little as possible.
     -   Add new files where possible.
@@ -178,4 +175,4 @@ I'm grateful to the authors of existing related projects for their ideas and col
 
 ## License
 
-Create React WP Theme is open source software [licensed as MIT](https://github.com/facebook/create-react-app/blob/master/LICENSE).
+Create React WP Theme is open source software [licensed as MIT](https://github.com/devloco/create-react-wptheme/blob/master/LICENSE).
