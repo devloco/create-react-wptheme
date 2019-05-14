@@ -100,9 +100,9 @@ const scriptsFromGit = function() {
 };
 
 const scriptsFromFile = function() {
-    console.log("SCRIPTS FROM FILE");
-    // let filePath = "file:E:\\WPDev\\github\\devloco\\create-react-wptheme-scripts\\packages\\react-scripts";
-    let filePath = "file:/mnt/e/WPDev/github/devloco/create-react-wptheme-scripts/packages/react-scripts";
+    let filePath = "file:E:\\WPDev\\github\\devloco\\create-react-wptheme-scripts\\packages\\react-scripts";
+    console.log("SCRIPTS FROM FILE", filePath);
+    //let filePath = "file:/mnt/e/WPDev/github/devloco/create-react-wptheme-scripts/packages/react-scripts";
     return {
         path: filePath,
         callback: function() {}
