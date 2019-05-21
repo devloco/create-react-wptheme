@@ -1,14 +1,35 @@
-# Create React WP Theme
+# Create React WP Theme <!-- omit in toc -->
 
 `*UPDATED* to support create-react-app v3.0.1`
-
--   [Updating Existing Themes](#updating-existing-themes)
 
 The intention of this project is to maintain a set of custom `react-scripts` that will allow you to
 create React WordPress themes as easily as `create-react-app` allows other devs to create their apps.
 
 The biggest difference with this project and the original is that **it uses your WordPress server as the
 development server instead of the Webpack Dev Server.**
+
+## Getting Started <!-- omit in toc -->
+
+[Michael Soriano](https://github.com/michaelsoriano) wrote a great introductory tutorial for using `create-react-wptheme`. It provides a lot more detail than this `readme` and the screen shots are really helpful.
+
+Check it out:
+<br>
+[Let's build a WordPress theme with React: Part 1 (Setup)](http://michaelsoriano.com/wordpress-theme-react-part-1-setup/)
+
+## Readme Contents <!-- omit in toc -->
+For more details check out the rest of this document.
+
+- [Usage](#usage)
+- [Updating Existing Themes](#updating-existing-themes)
+- [Coding with React](#coding-with-react)
+  - [React Tutorials](#react-tutorials)
+  - [The Public Folder](#the-public-folder)
+  - [Dev Configuration](#dev-configuration)
+  - [Build Configuration](#build-configuration)
+  - [HTTPS/SSL Support](#httpsssl-support)
+- [Goals](#goals)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
 ## Usage
 
