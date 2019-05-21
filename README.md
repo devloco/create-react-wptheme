@@ -10,7 +10,7 @@ development server instead of the Webpack Dev Server.**
 
 ## Getting Started <!-- omit in toc -->
 
-[Michael Soriano](https://github.com/michaelsoriano) wrote a great introductory tutorial for using `create-react-wptheme`. It provides a lot more detail than this `readme` and the screen shots are really helpful.
+[Michael Soriano](https://github.com/michaelsoriano) wrote a great tutorial for using `create-react-wptheme`. It provides a lot more detail than this `readme` and the screen shots are really helpful.
 
 Check it out:
 <br>
