@@ -145,7 +145,7 @@ To configure the `Browser Refresh Server` to use SSL, follow these steps:
 
 While you're actively developing your theme, the files are not optimized for production. Before you put your theme into production, you need to run the `build` command.
 
-In a command prompt, change into the `react-src` folder of you theme and run this command:
+Open a command prompt and change into the `react-src` folder of you theme and run this command:
 `npm run build`
 
 When that command finishes, your optimized files are located in a folder that can be deployed to your production server.
