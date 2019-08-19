@@ -55,9 +55,7 @@ const _getScriptsPath = function() {
 };
 
 const scriptsFromNpm = function() {
-    //path: "@devloco/react-scripts-test",
-    //path: "@devloco/react-scripts-wptheme",
-    //console.log('SCRIPTS FROM NPM');
+    //console.log("SCRIPTS FROM NPM");
     return {
         path: "@devloco/react-scripts-wptheme",
         callback: function() {}
@@ -297,7 +295,7 @@ function checkAppName(appName) {
     }
 
     // TODO: there should be a single place that holds the dependencies
-    const dependencies = ["react", "react-dom", "react-scripts", "@devloco/react-scripts-wptheme", "react-scripts-wptheme"].sort();
+    const dependencies = ["react", "react-dom", "react-scripts", "@devloco/react-scripts-wptheme"].sort();
     if (dependencies.indexOf(appName) >= 0) {
         console.error(
             chalk.red(`We cannot create a project called ${chalk.green(appName)} because a dependency with the same name exists.\n` + `Due to the way npm works, the following names are not allowed:\n\n`) +

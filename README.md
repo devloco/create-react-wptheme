@@ -1,6 +1,6 @@
 # Create React WP Theme <!-- omit in toc -->
 
-`*UPDATED* to support create-react-app v3.0.1`
+`*UPDATED* to support create-react-app v3.1.1`
 
 The intention of this project is to maintain a set of custom `react-scripts` that will allow you to
 create React WordPress themes as easily as `create-react-app` allows other devs to create their apps.
@@ -19,7 +19,7 @@ Check it out:
 ## Readme Contents <!-- omit in toc -->
 For more details check out the rest of this document.
 
-- [Usage](#usage)
+- [Creating a New Theme](#creating-a-new-theme)
 - [Updating Existing Themes](#updating-existing-themes)
 - [Developing Your Theme](#developing-your-theme)
   - [React Tutorials](#react-tutorials)
@@ -32,7 +32,7 @@ For more details check out the rest of this document.
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
-## Usage
+## Creating a New Theme
 
 To create a WordPress theme using the `create-react-wptheme`, follow these steps.
 
@@ -159,6 +159,11 @@ Here's an example showing which folder to deploy to your server:
       - react-src
       - !READY_TO_DEPLOY!.txt
 
+If you need to continue developing your theme, simply:
+- `cd react-src`
+- `npm run start`
+
+And all your theme files will reappear.
 
 ### Dealing With Differing Paths Between DEV and PROD
 
@@ -171,7 +176,7 @@ For example:
 
 -   Your WordPress dev server is running at http<nolink>://localhost/wordpress
     -   the homepage setting in your main package.json file will probably work just fine.
-    -   The homepage line in your main package.json be something like: `"homepage": "/wordpress/wp-content/themes/<your theme's folder name>"`
+    -   The homepage line in your main package.json will be something like: `"homepage": "/wordpress/wp-content/themes/<your theme's folder name>"`
 -   But you know that your production server runs WordPress from the root: http<nolink>://mycoolblog.com/
     -   In this case you want to remove the `/wordpress` part, so set the "homepage" line in your `user.prod.json` file to:
         `"homepage": "/wp-content/themes/<your theme's folder name>"`
