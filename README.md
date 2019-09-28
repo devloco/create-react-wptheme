@@ -1,6 +1,6 @@
 # Create React WP Theme <!-- omit in toc -->
 
-*UPDATED* to support [Create React App](https://github.com/facebook/create-react-app) v3.1.1
+*UPDATED* to support [Create React App](https://github.com/facebook/create-react-app) v3.1.2
 
 The intention of this project is to maintain a set of custom `react-scripts` that will allow you to
 create React WordPress themes as easily as `create-react-app` allows other devs to create their apps.
