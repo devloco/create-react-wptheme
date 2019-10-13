@@ -1,6 +1,6 @@
 {
-    "name": "create-react-wptheme",
-    "version": "3.1.201",
+    "name": "@devloco/create-react-wptheme",
+    "version": "3.2.0-wp.1",
     "description": "Create React WP themes with no build configuration.",
     "main": "index.js",
     "scripts": {
@@ -43,11 +43,11 @@
     },
     "dependencies": {
         "chalk": "2.4.2",
-        "commander": "2.19.0",
+        "commander": "2.20.0",
         "cross-spawn": "6.0.5",
         "envinfo": "7.3.1",
         "fs-extra": "7.0.1",
-        "semver": "6.0.0",
+        "semver": "6.3.0",
         "tmp": "0.0.33",
         "validate-npm-package-name": "3.0.0"
     }

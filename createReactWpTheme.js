@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2018-present, https://github.com/devloco
+ * Copyright (c) 2019-present, https://github.com/devloco
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -47,9 +47,10 @@ const envinfo = require("envinfo");
 
 const packageJson = require("./package.json");
 const _wpThemeVersion = packageJson.version;
-// const _createReactAppVersion = _wpThemeVersion.split('-')[0];
+const _createReactAppVersion = _wpThemeVersion.split("-wp.")[0];
 
-// Check this!!!!
+// Check these!!!!
+const _reactScriptsWpThemeVersion = "3.2.0-wp.1";
 const _getScriptsPath = function() {
     return scriptsFromNpm();
 };
@@ -57,7 +58,7 @@ const _getScriptsPath = function() {
 const scriptsFromNpm = function() {
     //console.log("SCRIPTS FROM NPM");
     return {
-        path: "@devloco/react-scripts-wptheme",
+        path: `@devloco/react-scripts-wptheme@^${_reactScriptsWpThemeVersion}`,
         callback: function() {}
     };
 };
@@ -169,6 +170,8 @@ function printValidationResults(results) {
 }
 
 console.log(program.name() + " version: " + chalk.magenta(_wpThemeVersion));
+console.log("@devloco/react-scripts-wptheme version: " + chalk.magenta(_reactScriptsWpThemeVersion));
+console.log("create-react-app version: " + chalk.magenta(_createReactAppVersion));
 createApp(projectName, program.verbose, program.scriptsVersion, program.useNpm, program.usePnp, program.typescript);
 
 function createApp(name, verbose, version, useNpm, usePnp, useTypescript, template) {
@@ -239,7 +242,7 @@ function createReactApp(createWpThemeReactRoot, appName, version, verbose, origi
         let command = "npx";
 
         let args = [];
-        args.push("create-react-app");
+        args.push(`create-react-app@${_createReactAppVersion}`);
         args.push(createWpThemeReactRoot);
 
         if (verbose) {
