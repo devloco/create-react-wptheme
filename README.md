@@ -2,7 +2,7 @@
 
 Oct. 12, 2019
 <br />
-*UPDATED* to match [v3.2.0](https://github.com/facebook/create-react-app/releases/tag/v3.2.0) of [Create React App](https://reactjs.org/)
+*UPDATED* to match [v3.2.0](https://github.com/facebook/create-react-app/releases/tag/v3.2.0) of [Create React App](https://create-react-app.dev/)
 
 The intention of this project is to maintain a set of custom `react-scripts` that will allow you to
 create React WordPress themes as easily as `create-react-app` allows other devs to create their apps.
