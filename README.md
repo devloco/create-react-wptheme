@@ -1,8 +1,8 @@
 # Create React WP Theme <!-- omit in toc -->
 
-Oct. 12, 2019
+Nov. 23, 2019
 <br />
-*UPDATED* to match [v3.2.0](https://github.com/facebook/create-react-app/releases/tag/v3.2.0) of [Create React App](https://create-react-app.dev/)
+[v3.2.0](https://github.com/facebook/create-react-app/releases/tag/v3.2.0) of [Create React App](https://create-react-app.dev/) is still the latest.
 
 The intention of this project is to maintain a set of custom `react-scripts` that will allow you to
 create React WordPress themes as easily as `create-react-app` allows other devs to create their apps.
@@ -19,6 +19,7 @@ Check it out:
 [Let's build a WordPress theme with React: Part 1 (Setup)](http://michaelsoriano.com/wordpress-theme-react-part-1-setup/)
 
 ## Readme Contents <!-- omit in toc -->
+
 For more details check out the rest of this document.
 
 - [Creating a New Theme](#creating-a-new-theme)
@@ -58,7 +59,7 @@ To create a WordPress theme using the `create-react-wptheme`, follow these steps
         -   Write access for your web server is only needed during this setup step.
         -   **You can revoke write access after the setup has completed.**
         -   Interested (paranoid?) about what it's doing? Check out the file: `<your theme folder name>/index.php`
-    -   When that's done the theme tells you to `Please restart the Nodejs watcher now...`
+    -   When that's done you'll see: `Now, back in your command prompt, rerun the "start" script again...`
     -   To do that, go back to your command prompt where you first ran `npm run start` and rerun that same command again.
 -   In a few seconds you should see your browser load with the standard create-react-app page, but it's running as a WordPress theme!
 
@@ -154,16 +155,17 @@ When that command finishes, your optimized files are located in a folder that ca
 
 Here's an example showing which folder to deploy to your server:
 
-- ...wp-content
-  - themes
-    - my-theme
-      - my-theme `<- deploy this folder to your production server's themes folder`
-      - react-src
-      - !READY_TO_DEPLOY!.txt
+-   ...wp-content
+    -   themes
+        -   my-theme
+            -   my-theme `<- deploy this folder to your production server's themes folder`
+            -   react-src
+            -   !READY_TO_DEPLOY!.txt
 
 If you need to continue developing your theme, simply:
-- `cd react-src`
-- `npm run start`
+
+-   `cd react-src`
+-   `npm run start`
 
 And all your theme files will reappear.
 

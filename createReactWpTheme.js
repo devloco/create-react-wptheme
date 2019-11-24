@@ -50,7 +50,7 @@ const _wpThemeVersion = packageJson.version;
 const _createReactAppVersion = _wpThemeVersion.split("-wp.")[0];
 
 // Check these!!!!
-const _reactScriptsWpThemeVersion = "3.2.0-wp.1";
+const _reactScriptsWpThemeVersion = "3.2.0-wp.2";
 const _getScriptsPath = function() {
     return scriptsFromNpm();
 };
@@ -95,16 +95,6 @@ const scriptsFromGit = function() {
         callback: function() {
             deleteFolderRecursive(tempPath);
         }
-    };
-};
-
-const scriptsFromFile = function() {
-    let filePath = "file:E:\\WPDev\\github\\devloco\\create-react-wptheme-scripts\\packages\\react-scripts";
-    console.log("SCRIPTS FROM FILE", filePath);
-    //let filePath = "file:/mnt/e/WPDev/github/devloco/create-react-wptheme-scripts/packages/react-scripts";
-    return {
-        path: filePath,
-        callback: function() {}
     };
 };
 
