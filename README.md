@@ -1,14 +1,14 @@
 # Create React WP Theme <!-- omit in toc -->
 
-Dec. 5, 2019
+Dec. 15, 2019
 <br />
-[v3.3.0](https://github.com/facebook/create-react-app/releases/tag/v3.3.0) of [Create React App](https://create-react-app.dev/) was released yesterday. I usually wait a few days before updating `create-react-wptheme` just to make sure that they don't have any major bugs. So look for the updated `create-react-wptheme` sometime Wed-Thu next week.
+[v3.3.0](https://github.com/facebook/create-react-app/releases/tag/v3.3.0) of [Create React App](https://create-react-app.dev/) was released. It's a major change, and it's going take me another week to make the changes to `create-react-wptheme`.
 
 But don't let that stop you from creating a new theme now, as updating your theme is quite painless (see [Updating Existing Themes](#updating-existing-themes)) below.
 
 The current release of `create-react-wptheme` is based on [v3.2.0](https://github.com/facebook/create-react-app/releases/tag/v3.2.0) of [Create React App](https://create-react-app.dev/).
 
-----
+---
 
 The intention of this project is to maintain a set of custom `react-scripts` that will allow you to
 create React WordPress themes as easily as `create-react-app` allows other devs to create their apps.
@@ -28,18 +28,18 @@ Check it out:
 
 For more details check out the rest of this document.
 
-- [Creating a New Theme](#creating-a-new-theme)
-- [Updating Existing Themes](#updating-existing-themes)
-- [Developing Your Theme](#developing-your-theme)
-  - [React Tutorials](#react-tutorials)
-  - [The Public Folder](#the-public-folder)
-  - [Dev Configuration](#dev-configuration)
-  - [HTTPS/SSL Support](#httpsssl-support)
-- [Deploying Your Theme](#deploying-your-theme)
-  - [Dealing With Differing Paths Between DEV and PROD](#dealing-with-differing-paths-between-dev-and-prod)
-- [Goals](#goals)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
+-   [Creating a New Theme](#creating-a-new-theme)
+-   [Updating Existing Themes](#updating-existing-themes)
+-   [Developing Your Theme](#developing-your-theme)
+    -   [React Tutorials](#react-tutorials)
+    -   [The Public Folder](#the-public-folder)
+    -   [Dev Configuration](#dev-configuration)
+    -   [HTTPS/SSL Support](#httpsssl-support)
+-   [Deploying Your Theme](#deploying-your-theme)
+    -   [Dealing With Differing Paths Between DEV and PROD](#dealing-with-differing-paths-between-dev-and-prod)
+-   [Goals](#goals)
+-   [Acknowledgements](#acknowledgements)
+-   [License](#license)
 
 ## Creating a New Theme
 
