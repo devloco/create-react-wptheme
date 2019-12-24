@@ -58,7 +58,7 @@ const _getScriptsPath = function() {
 const scriptsFromNpm = function() {
     //console.log("SCRIPTS FROM NPM");
     return {
-        path: `@devloco/react-scripts-wptheme@^${_reactScriptsWpThemeVersion}`,
+        path: `@devloco/react-scripts-wptheme@${_reactScriptsWpThemeVersion}`,
         callback: function() {}
     };
 };
