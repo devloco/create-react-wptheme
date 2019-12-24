@@ -1,9 +1,6 @@
 {
     "private": true,
     "workspaces": [
-        "cra-template-wptheme",
-        "cra-template-wptheme-typescript",
-        "create-react-wptheme",
-        "create-react-wptheme-utils"
+        "packages/*"
     ]
 }

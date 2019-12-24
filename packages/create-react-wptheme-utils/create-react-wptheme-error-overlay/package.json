@@ -1,0 +1,31 @@
+{
+    "name": "@devloco/create-react-wptheme-error-overlay",
+    "version": "3.3.0-wp.1",
+    "description": "create-react-wptheme client with error overlay",
+    "main": "wptheme-error-overlay.js",
+    "scripts": {
+        "build": "npx webpack"
+    },
+    "author": "devloco",
+    "license": "MIT",
+    "homepage": "https://github.com/devloco/create-react-wptheme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/devloco/create-react-wptheme.git"
+    },
+    "files": [
+        "wpThemeErrorOverlay.js"
+    ],
+    "dependencies": {
+        "react-dev-utils": "^10.0.0",
+        "react-error-overlay": "^6.0.4"
+    },
+    "devDependencies": {
+        "@babel/code-frame": "^7.5.5",
+        "@babel/core": "^7.7.5",
+        "@webpack-cli/info": "^0.2.0",
+        "babel-loader": "^8.0.6",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10"
+    }
+}

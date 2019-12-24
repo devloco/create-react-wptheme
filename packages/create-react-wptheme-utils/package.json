@@ -1,0 +1,39 @@
+{
+    "name": "@devloco/create-react-wptheme-utils",
+    "version": "3.3.0-wp.1",
+    "description": "Utilities used by react-scripts-wptheme.",
+    "engines": {
+        "node": ">=8"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/devloco/react-scripts-wptheme-utils.git"
+    },
+    "author": "devloco",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/devloco/react-scripts-wptheme-utils/issues"
+    },
+    "homepage": "https://github.com/devloco/react-scripts-wptheme-utils#readme",
+    "files": [
+        "fileFunctions.js",
+        "fileWatcherPlugin.js",
+        "getUserConfig.js",
+        "postInstallerInfo.js",
+        "shell-js.js",
+        "wpThemeClient.js",
+        "wpThemeErrorOverlay.js",
+        "wpThemeServer.js"
+    ],
+    "dependencies": {
+        "chalk": "^3.0.0",
+        "chokidar": "^3.3.0",
+        "shelljs": "^0.8.3",
+        "fs-extra": "^8.1.0",
+        "ws": "^7.2.1"
+    },
+    "devDependencies": {}
+}
