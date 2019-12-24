@@ -1,0 +1,37 @@
+{
+    "name": "cra-template-wptheme",
+    "version": "3.3.0-wp.1",
+    "keywords": [
+        "wordpress",
+        "create-react-app",
+        "wordpress-theme",
+        "wordpress-development",
+        "wordpress-starter-theme",
+        "wordpress-api",
+        "reactjs",
+        "react",
+        "react-theme",
+        "wordpress-server",
+        "react-tutorial",
+        "react-wordpress-themes",
+        "php",
+        "template"
+    ],
+    "description": "The base template for Create React WPTheme.",
+    "main": "template.json",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/devloco/create-react-wptheme.git"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=8"
+    },
+    "bugs": {
+        "url": "https://github.com/devloco/create-react-wptheme/issues"
+    },
+    "files": [
+        "template",
+        "template.json"
+    ]
+}
