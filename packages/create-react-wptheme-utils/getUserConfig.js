@@ -10,7 +10,7 @@
 const fs = require("fs-extra");
 const chalk = require("chalk");
 const path = require("path");
-const wpThemePostInstallerInfo = require("@devloco/react-scripts-wptheme-utils/postInstallerInfo");
+const wpThemePostInstallerInfo = require("@devloco/create-react-wptheme-utils/postInstallerInfo");
 
 const _userDevConfigName = "user.dev.json";
 const _userProdConfigName = "user.prod.json";

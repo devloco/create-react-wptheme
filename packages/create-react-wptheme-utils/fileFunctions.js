@@ -10,8 +10,8 @@
 const fs = require("fs-extra");
 const path = require("path");
 const { rm, cp } = require("shelljs");
-const wpThemePostInstallerInfo = require("@devloco/react-scripts-wptheme-utils/postInstallerInfo");
-const wpThemeUserConfig = require("@devloco/react-scripts-wptheme-utils/getUserConfig"); //(paths, process.env.NODE_ENV);
+const wpThemePostInstallerInfo = require("@devloco/create-react-wptheme-utils/postInstallerInfo");
+const wpThemeUserConfig = require("@devloco/create-react-wptheme-utils/getUserConfig"); //(paths, process.env.NODE_ENV);
 
 const _doNotEditFileName = "!DO_NOT_EDIT_THESE_FILES!.txt";
 const _readyToDeployFileName = "!READY_TO_DEPLOY!.txt";

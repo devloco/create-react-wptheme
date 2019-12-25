@@ -1,7 +1,7 @@
 {
     "name": "@devloco/create-react-wptheme-utils",
-    "version": "3.3.0-wp.1",
-    "description": "Utilities used by react-scripts-wptheme.",
+    "version": "3.3.0-wp.2",
+    "description": "Utilities used by create-react-wptheme.",
     "engines": {
         "node": ">=8"
     },
@@ -10,14 +10,13 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/devloco/react-scripts-wptheme-utils.git"
+        "url": "https://github.com/devloco/create-react-wptheme"
     },
     "author": "devloco",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/devloco/react-scripts-wptheme-utils/issues"
+        "url": "https://github.com/devloco/create-react-wptheme/issues"
     },
-    "homepage": "https://github.com/devloco/react-scripts-wptheme-utils#readme",
     "files": [
         "fileFunctions.js",
         "fileWatcherPlugin.js",
