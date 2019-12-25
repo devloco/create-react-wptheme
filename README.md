@@ -1,12 +1,8 @@
 # Create React WP Theme <!-- omit in toc -->
 
-Dec. 15, 2019
+Dec. 24, 2019
 <br />
-[v3.3.0](https://github.com/facebook/create-react-app/releases/tag/v3.3.0) of [Create React App](https://create-react-app.dev/) was released. It's a major change, and it's going take me another week to make the changes to `create-react-wptheme`.
-
-But don't let that stop you from creating a new theme now, as updating your theme is quite painless (see [Updating Existing Themes](#updating-existing-themes)) below.
-
-The current release of `create-react-wptheme` is based on [v3.2.0](https://github.com/facebook/create-react-app/releases/tag/v3.2.0) of [Create React App](https://create-react-app.dev/).
+The current release of `create-react-wptheme` is based on the latest [Create React App](https://create-react-app.dev/) version which is [3.3.0](https://github.com/facebook/create-react-app/releases/tag/v3.2.0).
 
 ---
 
