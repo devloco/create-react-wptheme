@@ -32,6 +32,7 @@
         Learn how to configure a non-root public URL by running `npm run wpbuild`.
     -->
     <title>React WordPress Theme</title>
+    <?php wp_head(); ?>
 </head>
     <body>
     <noscript>
@@ -48,5 +49,6 @@
         To begin the development, run `npm run wpstart` or `yarn wpstart`.
         To create a production bundle, use `npm run wpbuild` or `yarn wpbuild`.
     -->
+    <?php wp_footer(); ?>
     </body>
 </html>
