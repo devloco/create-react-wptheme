@@ -50,7 +50,7 @@ const _wpThemeVersion = packageJson.version;
 const _createReactAppVersion = _wpThemeVersion.split("-wp.")[0];
 
 // Check these!!!!
-const _reactScriptsWpThemeVersion = "3.2.0-wp.2";
+const _reactScriptsWpThemeVersion = "3.3.0-wp.2";
 const _getScriptsPath = function() {
     return scriptsFromNpm();
 };
@@ -110,7 +110,7 @@ const program = new commander.Command(packageJson.name)
     .option("--info", "print environment debug info")
     .option("--use-npm", "force downloading packages using npm instead of yarn (if both are installed)")
     .option("--use-pnp")
-    .option("--typescript")
+    .option("--typescript", "set your theme to use TypeScript")
     .allowUnknownOption()
     .on("--help", () => {
         console.log(`    Only ${chalk.green("<project-directory>")} is required.`);
@@ -161,7 +161,7 @@ function printValidationResults(results) {
 
 console.log(program.name() + " version: " + chalk.magenta(_wpThemeVersion));
 console.log("@devloco/react-scripts-wptheme version: " + chalk.magenta(_reactScriptsWpThemeVersion));
-console.log("create-react-app version: " + chalk.magenta(_createReactAppVersion));
+console.log();
 createApp(projectName, program.verbose, program.scriptsVersion, program.useNpm, program.usePnp, program.typescript);
 
 function createApp(name, verbose, version, useNpm, usePnp, useTypescript, template) {
@@ -172,6 +172,7 @@ function createApp(name, verbose, version, useNpm, usePnp, useTypescript, templa
     fs.ensureDirSync(name);
 
     console.log(`Creating a new React WP theme in ${chalk.green(root)}.`);
+    console.log(`Using Create React App ${chalk.green(_createReactAppVersion)} to scaffold the theme's source code...`);
     console.log();
 
     let useYarn = useNpm ? false : shouldUseYarn();
@@ -194,6 +195,14 @@ function shouldUseYarn() {
 function createWpTheme(root, appName, version, verbose, originalDirectory, template, useYarn, usePnp, useTypescript) {
     const packageToInstall = "create-react-app";
 
+    if (useTypescript === true) {
+        template = "wptheme-typescript";
+    }
+
+    if (typeof template !== "string" || template.trim().length === 0) {
+        template = "wptheme";
+    }
+
     return Promise.resolve(packageToInstall)
         .then((packageName) =>
             checkIfOnline(useYarn).then((isOnline) => ({
@@ -207,7 +216,7 @@ function createWpTheme(root, appName, version, verbose, originalDirectory, templ
             }
 
             let createWpThemeReactRoot = "react-src";
-            createReactApp(createWpThemeReactRoot, appName, version, verbose, originalDirectory, template, useYarn, usePnp, useTypescript);
+            createReactApp(createWpThemeReactRoot, appName, version, verbose, originalDirectory, template, useYarn, usePnp);
         })
         .catch((reason) => {
             console.log();
@@ -227,7 +236,7 @@ function createWpTheme(root, appName, version, verbose, originalDirectory, templ
         });
 }
 
-function createReactApp(createWpThemeReactRoot, appName, version, verbose, originalDirectory, template, useYarn, usePnp, useTypescript) {
+function createReactApp(createWpThemeReactRoot, appName, version, verbose, originalDirectory, template, useYarn, usePnp) {
     return new Promise((resolve, reject) => {
         let command = "npx";
 
@@ -247,9 +256,8 @@ function createReactApp(createWpThemeReactRoot, appName, version, verbose, origi
             args.push("--use-pnp");
         }
 
-        if (useTypescript) {
-            args.push("--typescript");
-        }
+        args.push("--template");
+        args.push(template);
 
         let scriptsPath = _getScriptsPath();
         args.push("--scripts-version");
