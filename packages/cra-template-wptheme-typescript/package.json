@@ -1,6 +1,6 @@
 {
-    "name": "@devloco/cra-template-wptheme-typescript",
-    "version": "3.3.0-wp.6",
+    "name": "cra-template-wptheme-typescript",
+    "version": "3.3.0-wp.7",
     "keywords": [
         "react",
         "create-react-app",
