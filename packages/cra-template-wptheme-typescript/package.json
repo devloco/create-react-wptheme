@@ -1,32 +1,23 @@
 {
-    "name": "cra-template-wptheme-typescript",
-    "version": "3.3.0-wp.2",
+    "name": "@devloco/cra-template-wptheme-typescript",
+    "version": "3.3.0-wp.6",
     "keywords": [
-        "wordpress",
-        "create-react-app",
-        "wordpress-theme",
-        "wordpress-development",
-        "wordpress-starter-theme",
-        "wordpress-api",
-        "reactjs",
         "react",
-        "react-theme",
-        "wordpress-server",
-        "react-tutorial",
-        "react-wordpress-themes",
-        "php",
-        "typescript",
-        "template"
+        "create-react-app",
+        "create-react-wptheme",
+        "template",
+        "typescript"
     ],
     "description": "The TypeScript template for Create React WPTheme.",
     "main": "template.json",
     "repository": {
         "type": "git",
-        "url": "https://github.com/devloco/create-react-wptheme.git"
+        "url": "https://github.com/devloco/create-react-wptheme.git",
+        "directory": "packages/cra-template-wptheme-typescript"
     },
     "license": "MIT",
     "engines": {
-        "node": ">=8"
+        "node": ">=8.10"
     },
     "bugs": {
         "url": "https://github.com/devloco/create-react-wptheme/issues"

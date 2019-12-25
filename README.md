@@ -1,6 +1,6 @@
 # Create React WP Theme <!-- omit in toc -->
 
-Dec. 24, 2019
+Dec. 25, 2019
 <br />
 Updated to use [Create React App](https://create-react-app.dev/) version [3.3.0](https://github.com/facebook/create-react-app/releases/tag/v3.3.0).
 
