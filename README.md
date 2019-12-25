@@ -2,7 +2,7 @@
 
 Dec. 24, 2019
 <br />
-The current release of `create-react-wptheme` is based on the latest [Create React App](https://create-react-app.dev/) version which is [3.3.0](https://github.com/facebook/create-react-app/releases/tag/v3.2.0).
+Updated to use [Create React App](https://create-react-app.dev/) version [3.3.0](https://github.com/facebook/create-react-app/releases/tag/v3.3.0).
 
 ---
 
