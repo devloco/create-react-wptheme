@@ -1,10 +1,7 @@
-# cra-template-wptheme
-
-This is the official base template for [Create React WPTheme](https://github.com/devloco/create-react-wptheme).
-
 # Create React WP Theme
 
 See the latest [README](https://github.com/devloco/create-react-wptheme) on Github.
+
 
 ## Goals
 
