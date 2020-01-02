@@ -37,7 +37,7 @@
         "index.js",
         "createReactWpTheme.js"
     ],
-    "homepage": "https://github.com/devloco/create-react-wptheme#readme",
+    "homepage": "https://github.com/devloco/create-react-wptheme",
     "bin": {
         "create-react-wptheme": "./index.js"
     },

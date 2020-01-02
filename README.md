@@ -1,8 +1,8 @@
 # Create React WP Theme <!-- omit in toc -->
 
-Dec. 25, 2019
+Jan. 1, 2020
 <br />
-Updated to use [Create React App](https://create-react-app.dev/) version [3.3.0](https://github.com/facebook/create-react-app/releases/tag/v3.3.0).
+Updated to match [Create React App](https://create-react-app.dev/) version [3.3.0](https://github.com/facebook/create-react-app/releases/tag/v3.3.0).
 
 ---
 
@@ -26,6 +26,7 @@ For more details check out the rest of this document.
 
 -   [Creating a New Theme](#creating-a-new-theme)
 -   [Updating Existing Themes](#updating-existing-themes)
+    -   [TypeScript Update](#typescript-update)
 -   [Developing Your Theme](#developing-your-theme)
     -   [React Tutorials](#react-tutorials)
     -   [The Public Folder](#the-public-folder)
@@ -73,11 +74,17 @@ From within your theme's `react-src` folder, run this command at a command promp
 
 `npm install @devloco/react-scripts-wptheme@latest`
 
-If your theme uses TypeScript, you'll need to run a second command (`create-react-wptheme` uses the Types from Facebook's React-Scripts):
-
-`npm install react-scripts@latest`
-
 **Important note for Yarn users: be sure to use `yarn add` instead of `npm install` in the above commands.**
+
+### TypeScript Update
+
+If your theme uses TypeScript, you'll need to modify the theme's `react-app-env.d.ts` file:
+
+-   Navigate to the `<Your Theme Root Folder>/react-src/src` folder.
+-   Open the `react-app-env.d.ts` in your editor of choice.
+-   Change the line in there to read (be sure to include the leading three slashes):
+    -   `/// <reference types="@devloco/react-scripts-wptheme" />`
+-   Save the change and you should be all set.
 
 ## Developing Your Theme
 
@@ -134,7 +141,7 @@ To configure the `Browser Refresh Server` to use SSL, follow these steps:
     -   `"wpThemeServer": { "enable": true, "host": "127.0.0.1", "port": 8090, "sslCert": "ssl/localhost.crt", "sslKey": "ssl/localhost.key", "watchFile": "../index.php" },`
     -   **NOTE** the `sslCert` and `sslKey` items. **Make sure the values point to your SSL certificate and key files.**
     -   The paths to those files can be **full paths** or **relative paths** from the `react-src` folder (as shown above).
-    -   I like to set the `host` to `127.0.0.1` instead of "localhost". The numeric address gets special treatment at the OS level as being mostly safe.
+    -   I like to set the `host` to `127.0.0.1` instead of "localhost". Supposedly the numeric address gets special treatment at the OS level as being mostly safe.
 -   Back in your command prompt, change dir back to the `react-src` folder.
     -   All OSes: `cd ..`
 -   Start Node/Webpack JS watcher as you normally would:
