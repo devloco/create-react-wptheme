@@ -26,7 +26,7 @@ For more details check out the rest of this document.
 
 -   [Creating a New Theme](#creating-a-new-theme)
 -   [Updating Existing Themes](#updating-existing-themes)
-    -   [TypeScript Update](#typescript-update)
+    -   [Updating TypeScript Types](#updating-typescript-types)
 -   [Developing Your Theme](#developing-your-theme)
     -   [React Tutorials](#react-tutorials)
     -   [The Public Folder](#the-public-folder)
@@ -61,26 +61,27 @@ To create a WordPress theme using the `create-react-wptheme`, follow these steps
     -   **If you get PHP errors, most likely your web server doesn't have write access to your theme.**
         -   Write access for your web server is only needed during this setup step.
         -   **You can revoke write access after the setup has completed.**
-        -   Interested (paranoid?) about what it's doing? Check out the file: `<your theme folder name>/index.php`
+        -   Interested (paranoid?) about what it's doing? Check out the file: `<Your Theme's Root Folder>/index.php`
     -   When that's done you'll see: `Now, back in your command prompt, rerun the "start" script again...`
     -   To do that, go back to your command prompt where you first ran `npm run start` and rerun that same command again.
 -   In a few seconds you should see your browser load with the standard create-react-app page, but it's running as a WordPress theme!
 
 ## Updating Existing Themes
 
-When new versions of `Create React WP Theme` are released, you can upgrade an existing theme using a single command.
+When new versions of `Create React WP Theme` are released, you can easily upgrade an existing theme using a single command.
 
-From within your theme's `react-src` folder, run this command at a command prompt:
+-   At a command prompt, navigate to your theme's `react-src` folder.
+    -   e.g. `<Your Theme's Root Folder>/react-src`
+-   If you use `npm` then run this command:
+    -   `npm install @devloco/react-scripts-wptheme@latest`
+-   If you use `yarn` then run this command:
+    -   `yarn add @devloco/react-scripts-wptheme@latest`
 
-`npm install @devloco/react-scripts-wptheme@latest`
-
-**Important note for Yarn users: be sure to use `yarn add` instead of `npm install` in the above commands.**
-
-### TypeScript Update
+### Updating TypeScript Types
 
 If your theme uses TypeScript, you'll need to modify the theme's `react-app-env.d.ts` file:
 
--   Navigate to the `<Your Theme Root Folder>/react-src/src` folder.
+-   Navigate to the `<Your Theme's Root Folder>/react-src/src` folder.
 -   Open the `react-app-env.d.ts` file in your editor of choice.
 -   Change the line in there to read (be sure to include the leading three slashes):
     -   `/// <reference types="@devloco/react-scripts-wptheme" />`
@@ -94,11 +95,11 @@ If you're looking at a React tutorial on the web, you can use `create-react-wpth
 <br>But you do have to remember that the React app code is one extra folder down inside your theme folder.
 <br>Notice that the final folder in this path is `react-src`:
 
-`/xampp/htdocs/wordpress/wp-content/themes/<Your-Create-React-WP-Theme-Folder>/react-src`
+`/xampp/htdocs/wordpress/wp-content/themes/<Your Theme's Root Folder>/react-src`
 
 So for example, if the tutorial instructs you to edit the `src/App.js` file, then for you, that file would actually be located at:
 
-`<Your-Create-React-WP-Theme-Folder>/react-src/src/App.js`
+`<Your Theme's Root Folder>/react-src/src/App.js`
 
 ### The Public Folder
 
@@ -121,8 +122,8 @@ To configure the `Browser Refresh Server` to use SSL, follow these steps:
 -   These instructions use the command prompt.
 -   Assuming you've already created a theme using `create-react-wptheme`, change directory into the `react-src` folder in your theme's folder
     -   Be sure to follow **all the instructions** under the **Usage** section at the top of this document. You need to complete the PHP portion of the setup before you can configure SSL.
-    -   Windows example: `cd C:\xampp\htdocs\wordpress\wp-content\themes\<your theme's folder name>\react-src`
-    -   Mac or \*nix example: `cd /xampp/htdocs/wordpress/wp-content/themes/<your theme's folder name>/react-src`
+    -   Windows example: `cd C:\xampp\htdocs\wordpress\wp-content\themes\<Your Theme's Root Folder>\react-src`
+    -   Mac or \*nix example: `cd /xampp/htdocs/wordpress/wp-content/themes/<Your Theme's Root Folder>/react-src`
 -   Create a new folder to hold you're development SSL certificate and key.
     -   All OSes: `mkdir ssl`
 -   Change directory into the `ssl` folder
@@ -189,10 +190,10 @@ For example:
 
 -   Your WordPress dev server is running at http<nolink>://localhost/wordpress
     -   the homepage setting in your main package.json file will probably work just fine.
-    -   The homepage line in your main package.json will be something like: `"homepage": "/wordpress/wp-content/themes/<your theme's folder name>"`
+    -   The homepage line in your main package.json will be something like: `"homepage": "/wordpress/wp-content/themes/<Your Theme's Root Folder>"`
 -   But you know that your production server runs WordPress from the root: http<nolink>://mycoolblog.com/
     -   In this case you want to remove the `/wordpress` part, so set the "homepage" line in your `user.prod.json` file to:
-        `"homepage": "/wp-content/themes/<your theme's folder name>"`
+        `"homepage": "/wp-content/themes/<Your Theme's Root Folder>"`
     -   Then run `npm run build`
     -   **Note** at this point, **your theme will appear broken on your dev server**. But it should look as expected on your production server.
 
