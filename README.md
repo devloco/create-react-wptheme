@@ -81,7 +81,7 @@ From within your theme's `react-src` folder, run this command at a command promp
 If your theme uses TypeScript, you'll need to modify the theme's `react-app-env.d.ts` file:
 
 -   Navigate to the `<Your Theme Root Folder>/react-src/src` folder.
--   Open the `react-app-env.d.ts` in your editor of choice.
+-   Open the `react-app-env.d.ts` file in your editor of choice.
 -   Change the line in there to read (be sure to include the leading three slashes):
     -   `/// <reference types="@devloco/react-scripts-wptheme" />`
 -   Save the change and you should be all set.
