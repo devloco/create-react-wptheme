@@ -2,7 +2,7 @@
 
 Feb. 5, 2020
 <br />
-A new version of [Create React App](https://create-react-app.dev/) version [3.3.1](https://github.com/facebook/create-react-app/releases/tag/v3.3.1) was recently releasted.
+Facebook recently updated [Create React App](https://create-react-app.dev/) to [v3.3.1](https://github.com/facebook/create-react-app/releases/tag/v3.3.1).
 
 I usually give it a few days before updating this project to match... just to make sure they don't have any show-stopping bugs. But look for an update to `create-react-wptheme` this weekend.
 
