@@ -8,12 +8,6 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //   /!\ DO NOT MODIFY THIS FILE /!\
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//
-// create-react-wptheme is installed globally on people's computers. This means
-// that it is extremely difficult to have them upgrade the version and
-// because there's only one global version installed, it is very prone to
-// breaking changes.
-//
 // The only job of create-react-wptheme is to init the repository and then
 // forward all the commands to the local version of create-react-wptheme.
 //
@@ -43,14 +37,14 @@ const execSync = require("child_process").execSync;
 const spawn = require("cross-spawn");
 const dns = require("dns");
 const url = require("url");
-const envinfo = require("envinfo");
+// const envinfo = require("envinfo");
 
 const packageJson = require("./package.json");
 const _wpThemeVersion = packageJson.version;
 const _createReactAppVersion = _wpThemeVersion.split("-wp.")[0];
 
 // Check these!!!!
-const _reactScriptsWpThemeVersion = "^3.3.0-wp.11";
+const _reactScriptsWpThemeVersion = "^3.3.1-wp.1";
 const _getScriptsPath = function() {
     return scriptsFromNpm();
 };
