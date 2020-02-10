@@ -4,11 +4,13 @@
 
 Feb. 9, 2020
 <br />
-Be sure to check out the new features (and bug fixes!) that Facebook added to [v3.3.1](https://github.com/facebook/create-react-app/releases/tag/v3.3.1) of `Create React App`.
+Be sure to check out the new features (and bug fixes!) that Facebook added to [v3.3.1](https://github.com/facebook/create-react-app/releases/tag/v3.3.1) of `Create-React-App`.
 
 ## Good to Know!
 
-[Create React App](https://create-react-app.dev/) is more than just React. `Create React App` is a stack of well tested and battle-hardened tools, guaranteed to be configured correctly to work together to make your job easier. **No need for weird CORS setups** or server proxies. **Why in the world** would you want to **maintain two servers** anyway? No need for that, just use `Create React WPTheme` instead. The biggest difference between `Create React WPTheme` and `Create React App` is that this project here **uses your WordPress server as the development server instead of the Webpack Dev Server.**
+[Create-React-App](https://create-react-app.dev/) is **more than** just **React.** `Create-React-App` is a stack of well tested and battle-hardened tools, guaranteed to be configured correctly to work together to make your job easier.
+
+**No need for weird CORS setups** or server proxies. **Why in the world** would you want to **maintain two servers** anyway? No need for that, just use `Create-React-WPTheme` instead. The biggest difference between `Create-React-WPTheme` and `Create-React-App` is that this project here **uses your WordPress server as the development server instead of the Webpack Dev Server.**
 
 ## Don't Forget!
 
@@ -72,7 +74,7 @@ To create a WordPress theme using the `create-react-wptheme`, follow these steps
 
 ## Updating Existing Themes
 
-When new versions of `Create React WP Theme` are released, you can easily upgrade an existing theme using a single command.
+When new versions of `Create-React-WPTheme` are released, you can easily upgrade an existing theme using a single command.
 
 -   At a command prompt, navigate to your theme's `react-src` folder.
     -   e.g. `<Your Theme's Root Folder>/react-src`
