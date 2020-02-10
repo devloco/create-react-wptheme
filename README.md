@@ -46,7 +46,7 @@ For more details check out the rest of this document.
 
 ## Creating a New Theme
 
-To create a WordPress theme using the `create-react-wptheme`, follow these steps.
+To create a WordPress theme using `create-react-wptheme`, follow these steps.
 
 -   Make sure your WordPress server is up and running.
 -   Change dir into your WordPress themes folder (**this is just an example, use your real themes folder**).
@@ -125,7 +125,6 @@ If you develop using SSL (i.e. HTTPS), then you might want to run the `Browser R
 
 To configure the `Browser Refresh Server` to use SSL, follow these steps:
 
--   These instructions use the command prompt.
 -   Assuming you've already created a theme using `create-react-wptheme`, change directory into the `react-src` folder in your theme's folder
     -   Be sure to follow **all the instructions** under the **Usage** section at the top of this document. You need to complete the PHP portion of the setup before you can configure SSL.
     -   Windows example: `cd C:\xampp\htdocs\wordpress\wp-content\themes\<Your Theme's Root Folder>\react-src`
