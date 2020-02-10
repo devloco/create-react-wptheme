@@ -1,18 +1,20 @@
 # Create React WP Theme <!-- omit in toc -->
 
-Feb. 5, 2020
-<br />
-Facebook recently updated [Create React App](https://create-react-app.dev/) to [v3.3.1](https://github.com/facebook/create-react-app/releases/tag/v3.3.1).
+## Updated!
 
-I usually give it a few days before updating this project to match... just to make sure they don't have any show-stopping bugs. But look for an update to `create-react-wptheme` this weekend-ish.
+Feb. 9, 2020
+<br />
+Be sure to check out the new features (and bug fixes!) that Facebook added to [v3.3.1](https://github.com/facebook/create-react-app/releases/tag/v3.3.1) of `Create React App`.
+
+## Good to Know!
+
+[Create React App](https://create-react-app.dev/) is more than just React. `Create React App` is a stack of well tested and battle-hardened tools, guaranteed to be configured correctly to work together to make your job easier. **No need for weird CORS setups** or server proxies. **Why in the world** would you want to **maintain two servers** anyway? No need for that, just use `Create React WPTheme` instead. The biggest difference between `Create React WPTheme` and `Create React App` is that this project here **uses your WordPress server as the development server instead of the Webpack Dev Server.**
+
+## Don't Forget!
+
+If you used an earlier version of `create-react-wptheme` to create a theme, you can easily update it as well. See the [Updating Existing Themes](#updating-existing-themes) section of the README below.
 
 ---
-
-The intention of this project is to maintain a set of custom `react-scripts` that will allow you to
-create React WordPress themes as easily as `create-react-app` allows other devs to create their apps.
-
-The biggest difference with this project and the original is that **it uses your WordPress server as the
-development server instead of the Webpack Dev Server.**
 
 ## Getting Started <!-- omit in toc -->
 
