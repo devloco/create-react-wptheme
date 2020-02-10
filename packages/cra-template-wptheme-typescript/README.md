@@ -14,7 +14,6 @@ npx create-react-wptheme my-theme --typescript
 
 See the latest [README](https://github.com/devloco/create-react-wptheme) on Github.
 
-
 ## Goals
 
 -   Remove WebPackDevServer and use your WordPress dev server instead.
