@@ -37,7 +37,6 @@ const execSync = require("child_process").execSync;
 const spawn = require("cross-spawn");
 const dns = require("dns");
 const url = require("url");
-// const envinfo = require("envinfo");
 
 const packageJson = require("./package.json");
 const _wpThemeVersion = packageJson.version;
@@ -52,8 +51,7 @@ const _getScriptsPath = function() {
 const scriptsFromNpm = function() {
     //console.log("SCRIPTS FROM NPM");
     return {
-        path: `@devloco/react-scripts-wptheme@${_reactScriptsWpThemeVersion}`,
-        callback: function() {}
+        path: `@devloco/react-scripts-wptheme@${_reactScriptsWpThemeVersion}`
     };
 };
 
@@ -210,24 +208,9 @@ function createWpTheme(root, appName, version, verbose, originalDirectory, templ
             }
 
             let createWpThemeReactRoot = "react-src";
-            createReactApp(createWpThemeReactRoot, appName, version, verbose, originalDirectory, template, useYarn, usePnp);
+            createReactApp(createWpThemeReactRoot, appName, version, verbose, originalDirectory, template, useYarn, usePnp).catch(catchHandler);
         })
-        .catch((reason) => {
-            console.log();
-            console.log("Aborting installation.");
-
-            if (reason.command) {
-                console.log(`  ${chalk.cyan(reason.command)} has failed.`);
-            } else {
-                console.log(chalk.red("Unexpected error."), reason);
-                console.log("Please report it as a bug here:");
-                console.log("https://github.com/devloco/create-react-wptheme/issues");
-            }
-
-            console.log();
-            console.log("Done.");
-            process.exit(1);
-        });
+        .catch(catchHandler);
 }
 
 function createReactApp(createWpThemeReactRoot, appName, version, verbose, originalDirectory, template, useYarn, usePnp) {
@@ -271,12 +254,10 @@ function createReactApp(createWpThemeReactRoot, appName, version, verbose, origi
                     return;
                 }
 
-                scriptsPath.callback();
+                scriptsPath && scriptsPath.callback && scriptsPath.callback();
                 resolve();
             });
-    }).catch((code) => {
-        reject(code);
-    });
+    }).catch(catchHandler);
 }
 
 function checkAppName(appName) {
@@ -338,4 +319,22 @@ function checkIfOnline(useYarn) {
             }
         });
     });
+}
+
+function catchHandler(reason) {
+    console.log();
+    console.log(chalk.red("Aborting installation."));
+
+    if (reason && reason.command) {
+        console.log(`  ${chalk.cyan(reason.command)} has failed.`);
+    } else {
+        console.log(chalk.red("Unexpected error."), reason);
+        console.log();
+        console.log("Please report it as a bug here:");
+        console.log("https://github.com/devloco/create-react-wptheme/issues");
+    }
+
+    console.log();
+    console.log("Done.");
+    process.exit(1);
 }
