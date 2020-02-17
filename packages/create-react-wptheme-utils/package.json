@@ -20,6 +20,7 @@
     "files": [
         "fileFunctions.js",
         "fileWatcherPlugin.js",
+        "getPublicUrlOrPath.js",
         "getUserConfig.js",
         "postInstallerInfo.js",
         "shell-js.js",
