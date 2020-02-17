@@ -43,7 +43,7 @@ const _wpThemeVersion = packageJson.version;
 const _createReactAppVersion = _wpThemeVersion.split("-wp.")[0];
 
 // Check these!!!!
-const _reactScriptsWpThemeVersion = "^3.3.1-wp.2";
+const _reactScriptsWpThemeVersion = "^3.4.0-wp.1";
 const _getScriptsPath = function() {
     return scriptsFromNpm();
 };

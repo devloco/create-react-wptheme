@@ -1,6 +1,6 @@
 {
     "name": "@devloco/create-react-wptheme",
-    "version": "3.3.1-wp.4",
+    "version": "3.4.0-wp.2",
     "description": "Create React-enabled WP themes.",
     "main": "index.js",
     "scripts": {
@@ -42,7 +42,7 @@
         "create-react-wptheme": "./index.js"
     },
     "dependencies": {
-        "chalk": "2.4.2",
+        "chalk": "3.0.0",
         "commander": "2.20.0",
         "cross-spawn": "6.0.5",
         "envinfo": "7.3.1",

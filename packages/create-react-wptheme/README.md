@@ -2,17 +2,17 @@
 
 ## Updated!
 
-Be sure to check out the new features (and bug fixes!) that Facebook added to [v3.3.1](https://github.com/facebook/create-react-app/releases/tag/v3.3.1) of `Create-React-App`.
+Be sure to check out the new features (and bug fixes!) that Facebook added to [v3.4.0](https://github.com/facebook/create-react-app/releases/tag/v3.4.0) of `Create-React-App`.
 
 ## Good to Know!
 
-[Create-React-App](https://create-react-app.dev/) is **more than** just **React.** `Create-React-App` is a stack of well tested and battle-hardened tools, guaranteed to be configured correctly to work together to make your job easier.
+[Create-React-App](https://create-react-app.dev/) is **more than** just **React.** `Create-React-App` is a suite of battle-hardened tools, guaranteed to be configured correctly to work together to make your job easier.
 
 **No need for weird CORS setups** or server proxies. **Why in the world** would you want to **maintain two servers** anyway? No need for that, just use `Create-React-WPTheme` instead. The biggest difference between `Create-React-WPTheme` and `Create-React-App` is that this project here **uses your WordPress server as the development server instead of the Webpack Dev Server.**
 
 ## Don't Forget!
 
-If you used an earlier version of `create-react-wptheme` to create a theme, you can easily update it as well. See the [Updating Existing Themes](#updating-existing-themes) section of the README below.
+If you used an earlier version of `create-react-wptheme` to create a theme, you can easily update it as well. See the [Updating Existing Themes](https://github.com/devloco/create-react-wptheme#updating-existing-themes) section of the README below.
 
 ---
 
