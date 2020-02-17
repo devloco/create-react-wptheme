@@ -12,7 +12,7 @@ Be sure to check out the new features (and bug fixes!) that Facebook added to [v
 
 ## Don't Forget!
 
-If you used an earlier version of `create-react-wptheme` to create a theme, you can easily update it as well. See the [Updating Existing Themes](#updating-existing-themes) section of the README below.
+If you used an earlier version of `create-react-wptheme` to create a theme, you can easily update it as well. See the [Updating Existing Themes](https://github.com/devloco/create-react-wptheme#updating-existing-themes) section of the README below.
 
 ---
 
