@@ -43,23 +43,23 @@ const _wpThemeVersion = packageJson.version;
 const _createReactAppVersion = _wpThemeVersion.split("-wp.")[0];
 
 // Check these!!!!
-const _reactScriptsWpThemeVersion = "^3.4.0-wp.1";
-const _getScriptsPath = function() {
+const _reactScriptsWpThemeVersion = "^3.4.0-wp.2";
+const _getScriptsPath = function () {
     return scriptsFromNpm();
 };
 
-const scriptsFromNpm = function() {
+const scriptsFromNpm = function () {
     //console.log("SCRIPTS FROM NPM");
     return {
-        path: `@devloco/react-scripts-wptheme@${_reactScriptsWpThemeVersion}`
+        path: `@devloco/react-scripts-wptheme@${_reactScriptsWpThemeVersion}`,
     };
 };
 
-const scriptsFromGit = function() {
+const scriptsFromGit = function () {
     console.log("SCRIPTS FROM GIT");
     const deleteFolderRecursive = (path) => {
         if (fs.existsSync(path)) {
-            fs.readdirSync(path).forEach(function(file) {
+            fs.readdirSync(path).forEach(function (file) {
                 let curPath = path + "/" + file;
                 if (fs.statSync(curPath).isDirectory()) {
                     // recurse
@@ -84,9 +84,9 @@ const scriptsFromGit = function() {
     let scriptsPath = "file:" + path.join(tempPath, "create-react-app", "packages", "react-scripts");
     return {
         path: scriptsPath,
-        callback: function() {
+        callback: function () {
             deleteFolderRecursive(tempPath);
-        }
+        },
     };
 };
 
@@ -122,11 +122,11 @@ if (program.info) {
                 Binaries: ["Node", "npm", "Yarn"],
                 Browsers: ["Chrome", "Edge", "Internet Explorer", "Firefox", "Safari"],
                 npmPackages: ["react", "react-dom", "react-scripts"],
-                npmGlobalPackages: ["create-react-app"]
+                npmGlobalPackages: ["create-react-app"],
             },
             {
                 duplicates: true,
-                showNotFound: true
+                showNotFound: true,
             }
         )
         .then(console.log);
@@ -199,7 +199,7 @@ function createWpTheme(root, appName, version, verbose, originalDirectory, templ
         .then((packageName) =>
             checkIfOnline(useYarn).then((isOnline) => ({
                 isOnline: isOnline,
-                packageName: packageName
+                packageName: packageName,
             }))
         )
         .then((info) => {
@@ -241,14 +241,14 @@ function createReactApp(createWpThemeReactRoot, appName, version, verbose, origi
         args.push(scriptsPath.path);
 
         const child = spawn(command, args, { stdio: "inherit" })
-            .on("error", function(err) {
+            .on("error", function (err) {
                 console.log(`createReactWpTheme.js ERROR for command: ${command} ${args.join(" ")}`);
                 throw err;
             })
             .on("close", (code) => {
                 if (code !== 0) {
                     reject({
-                        command: `${command} ${args.join(" ")}`
+                        command: `${command} ${args.join(" ")}`,
                     });
 
                     return;
@@ -288,9 +288,7 @@ function getProxy() {
     } else {
         try {
             // Trying to read https-proxy from .npmrc
-            let httpsProxy = execSync("npm config get https-proxy")
-                .toString()
-                .trim();
+            let httpsProxy = execSync("npm config get https-proxy").toString().trim();
             return httpsProxy !== "null" ? httpsProxy : undefined;
         } catch (e) {
             return;
