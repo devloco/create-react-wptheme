@@ -66,7 +66,6 @@ module.exports = function (paths, nodeEnv) {
 
     // Create both files ASAP.
     if (!wpThemePostInstallerInfo.postInstallerExists(paths)) {
-        nodeEnv = "init"; // Issue 45; this should only happen during setup of a new theme...
         _getUserConfig(paths, _userDevConfigName, defaultUserDevConfig);
         _getUserConfig(paths, _userProdConfigName, defaultUserProdConfig);
     }
@@ -82,7 +81,6 @@ module.exports = function (paths, nodeEnv) {
     switch (nodeEnv) {
         case "dev":
         case "development":
-        case "init":
             return _getUserConfig(paths, _userDevConfigName, defaultUserDevConfig);
         case "build":
         case "prod":
