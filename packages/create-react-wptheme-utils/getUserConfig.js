@@ -26,21 +26,24 @@ function _getUserConfig(paths, configName, defaultConfig) {
         userConfig = require(path.join(paths.appPath, configName));
     } catch (err) {
         userConfig = JSON.stringify(defaultConfig, null, 4);
-        _writeUserConfig(paths, configName, userConfig);
+        // Issue 45; Always write the dev config on error; only write the prod config if it is complete.
+        if (configName === _userDevConfigName || (configName === _userProdConfigName && defaultConfig && typeof defaultConfig.homepage === "string")) {
+            _writeUserConfig(paths, configName, userConfig);
+        }
         return defaultConfig;
     }
 
     return userConfig;
 }
 
-module.exports = function(paths, nodeEnv) {
+module.exports = function (paths, nodeEnv) {
     const appPackageJson = require(paths.appPackageJson);
 
     const defaultUserDevConfig = {
         fileWatcherPlugin: {
             touchFile: "./public/index.php",
             ignored: "./public/index.php",
-            watchFileGlobs: ["./public/**/*.js", "./public/**/*.css", "./public/**/*.php"]
+            watchFileGlobs: ["./public/**/*.js", "./public/**/*.css", "./public/**/*.php"],
         },
         wpThemeServer: {
             enable: true,
@@ -48,21 +51,22 @@ module.exports = function(paths, nodeEnv) {
             port: 8090,
             sslCert: null,
             sslKey: null,
-            watchFile: "../index.php"
+            watchFile: "../index.php",
         },
         injectWpThemeClient: {
             override: null,
-            file: "./build/index.php"
-        }
+            file: "./build/index.php",
+        },
     };
 
     const defaultUserProdConfig = {
         finalBuildPath: null,
-        homepage: appPackageJson.homepage
+        homepage: appPackageJson.homepage,
     };
 
     // Create both files ASAP.
     if (!wpThemePostInstallerInfo.postInstallerExists(paths)) {
+        nodeEnv = "init"; // Issue 45; this should only happen during setup of a new theme...
         _getUserConfig(paths, _userDevConfigName, defaultUserDevConfig);
         _getUserConfig(paths, _userProdConfigName, defaultUserProdConfig);
     }
@@ -78,6 +82,7 @@ module.exports = function(paths, nodeEnv) {
     switch (nodeEnv) {
         case "dev":
         case "development":
+        case "init":
             return _getUserConfig(paths, _userDevConfigName, defaultUserDevConfig);
         case "build":
         case "prod":

@@ -1,6 +1,6 @@
 {
     "name": "@devloco/create-react-wptheme-utils",
-    "version": "3.4.0-wp.1",
+    "version": "3.4.0-wp.11",
     "description": "Utilities used by create-react-wptheme.",
     "engines": {
         "node": ">=8"
@@ -20,7 +20,6 @@
     "files": [
         "fileFunctions.js",
         "fileWatcherPlugin.js",
-        "getPublicUrlOrPath.js",
         "getUserConfig.js",
         "postInstallerInfo.js",
         "shell-js.js",
