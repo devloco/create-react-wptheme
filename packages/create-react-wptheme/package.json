@@ -1,6 +1,6 @@
 {
     "name": "create-react-wptheme",
-    "version": "3.4.0-wp.7",
+    "version": "3.4.0-wp.8",
     "description": "Create React-enabled WP themes.",
     "main": "index.js",
     "scripts": {
