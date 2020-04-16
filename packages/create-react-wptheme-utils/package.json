@@ -1,6 +1,6 @@
 {
     "name": "@devloco/create-react-wptheme-utils",
-    "version": "3.4.0-wp.12",
+    "version": "3.4.1-wp.1",
     "description": "Utilities used by create-react-wptheme.",
     "engines": {
         "node": ">=8"
@@ -32,7 +32,7 @@
         "chokidar": "^3.3.1",
         "shelljs": "^0.8.3",
         "fs-extra": "^8.1.0",
-        "ws": "^7.2.1"
+        "ws": "^7.2.3"
     },
     "devDependencies": {}
 }
