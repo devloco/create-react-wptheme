@@ -1,13 +1,13 @@
 # Create React WP Theme <!-- omit in toc -->
 
-## Update to 3.4.1 Coming Soon
+## Up To Date!
 
-Apr. 12, 2020
+Apr. 15, 2020
 <br />
-Facebook released [v3.4.1](https://github.com/facebook/create-react-app/releases/tag/v3.4.1) of `Create-React-App`. I'm preparing an update and should be done soon.
+Facebook recently released [v3.4.1](https://github.com/facebook/create-react-app/releases/tag/v3.4.1) of [Create-React-App](https://create-react-app.dev/).
 
-Until then you can continue to create new projects using [v3.4.0](https://github.com/facebook/create-react-app/releases/tag/v3.4.0). When the new release is ready,
-[updating is easy](#updating-existing-themes)!
+And now `create-react-wptheme` is up-to-date.<br>
+If you have a theme made with an earlier version of `create-react-wptheme` and want to update it to the latest code, [just follow these instructions](#updating-existing-themes).
 
 ---
 
