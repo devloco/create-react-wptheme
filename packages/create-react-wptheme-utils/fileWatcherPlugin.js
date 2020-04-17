@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2018-present, https://github.com/devloco
+ * Copyright (c) 2020-present, https://github.com/devloco
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -45,7 +45,7 @@ FileWatcherPlugin.prototype.apply = function (compiler) {
     const touchFile = options.touchFile;
     const forceBuild = function (touchFileName) {
         // -c to not create a file if one doesn't already exist.
-        // Remember this file needs to be watched by WebPack, thus it should already exist
+        // Remember this file needs to be watched by WebPack, thus it should already exist.
         touch("-c", touchFileName);
     };
 
@@ -57,89 +57,84 @@ FileWatcherPlugin.prototype.apply = function (compiler) {
             followSymlinks: options.followSymlinks || true,
             cwd: options.cwd || ".",
             disableGlobbing: options.disableGlobbing || false,
-            usePolling: options.usePolling || true,
+            usePolling: options.usePolling || false,
             interval: options.interval || 100,
             binaryInterval: options.binaryInterval || 300,
             alwaysStat: options.alwaysStat || false,
             depth: options.depth || 99,
             awaitWriteFinish: {
                 stabilityThreshold: options.stabilityThreshold || 250,
-                pollInterval: options.pollInterval || 100
+                pollInterval: options.pollInterval || 100,
             },
 
             ignorePermissionErrors: options.ignorePermissionErrors || false,
-            atomic: options.atomic || true
+            atomic: options.atomic || true,
         });
 
         watcher
             .on(
                 "add",
                 options.onAddCallback ||
-                function (path) {
-                    //forceBuild(touchFile); // causes infinite loops for "add"
-                    return null;
-                }
+                    function (path) {
+                        //forceBuild(touchFile); // causes infinite loops for "add"
+                        return null;
+                    }
             )
             .on(
                 "change",
                 options.onChangeCallback ||
-                function (path) {
-                    // console.log(`\n\n Compilation Started  after change of - ${path} \n\n`);
-                    // compiler.run(function(err) {
-                    //     if (err) throw err;
-                    //     watcher.close();
-                    // });
-                    //console.log(`\n\n Compilation ended  for change of - ${path} \n\n`);
-                    forceBuild(touchFile);
-                }
+                    function (path) {
+                        console.log(`\n\n FileWatcherPlugin CHANGE for: ${path} \n\n`);
+                        forceBuild(touchFile);
+                    }
             )
             .on(
                 "unlink",
                 options.onUnlinkCallback ||
-                function (path) {
-                    // console.log(`File ${path} has been removed`);
-                    forceBuild(touchFile);
-                }
+                    function (path) {
+                        // console.log(`\n\n FileWatcherPlugin UNLINK for: ${path} \n\n`);
+                        forceBuild(touchFile);
+                    }
             );
 
         watcher
             .on(
                 "addDir",
                 options.onAddDirCallback ||
-                function (path) {
-                    // console.log(`Directory ${path} has been added`);
-                    forceBuild(touchFile);
-                }
+                    function (path) {
+                        // console.log(`\n\n FileWatcherPlugin ADDDIR for: ${path} \n\n`);
+                        forceBuild(touchFile);
+                    }
             )
             .on(
                 "unlinkDir",
                 options.unlinkDirCallback ||
-                function (path) {
-                    // console.log(`Directory ${path} has been removed`);
-                    forceBuild(touchFile);
-                }
+                    function (path) {
+                        // console.log(`\n\n FileWatcherPlugin UNLINKDIR for: ${path} \n\n`);
+                        forceBuild(touchFile);
+                    }
             )
             .on(
                 "error",
                 options.onErrorCallback ||
-                function (error) {
-                    console.log(`FileWatcherPlugin error: ${error}`);
-                    return null;
-                }
+                    function (error) {
+                        // console.log(`FileWatcherPlugin error: ${error}`);
+                        return null;
+                    }
             )
             .on(
                 "ready",
                 options.onReadyCallback ||
-                function () {
-                    console.log("Watching for changes in the Public folder.");
-                }
+                    function () {
+                        console.log("Watching for changes in the Public folder." /*, watcher.getWatched()*/);
+                    }
             )
             .on(
                 "raw",
                 options.onRawCallback ||
-                function (event, path, details) {
-                    return null;
-                }
+                    function (event, path, details) {
+                        return null;
+                    }
             );
     });
 };
