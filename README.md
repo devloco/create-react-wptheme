@@ -2,9 +2,9 @@
 
 ## Still Up To Date!
 
-May 6, 2020
+August 18, 2025
 <br />
-Just wanted to note that version [v3.4.1](https://github.com/facebook/create-react-app/releases/tag/v3.4.1) of [Create-React-App](https://create-react-app.dev/) is still the latest.
+As of now, version [v5.1.0](https://github.com/facebook/create-react-app/releases/tag/v5.1.0) of [Create React App](https://create-react-app.dev/) is the latest release.
 
 If you have a theme made with an earlier version of `create-react-wptheme` and want to update it to the latest code, [just follow these instructions](#updating-existing-themes).
 
@@ -98,6 +98,17 @@ If you're looking at a React tutorial on the web, you can use `create-react-wpth
 So for example, if the tutorial instructs you to edit the `src/App.js` file, then for you, that file would actually be located at:
 
 `<Your Theme's Root Folder>/react-src/src/App.js`
+
+Since Create React App automatically resolves `.jsx` extensions, you can drop an `App.jsx` file right next to `index.js` without any extra configuration. A basic folder layout might look like:
+
+```
+react-src/
+└─ src/
+   ├─ index.js
+   └─ App.jsx
+```
+
+From inside the `react-src` directory run `npm start` to develop locally or `npm run build` to create an optimized production build with the `.jsx` entry point.
 
 ### The Public Folder
 

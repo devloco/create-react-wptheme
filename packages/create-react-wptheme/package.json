@@ -1,6 +1,6 @@
 {
     "name": "create-react-wptheme",
-    "version": "3.4.1-wp.1",
+    "version": "5.0.1-wp.1",
     "description": "Create React-enabled WP themes.",
     "main": "index.js",
     "scripts": {
@@ -28,7 +28,7 @@
     "author": "devloco",
     "license": "MIT",
     "engines": {
-        "node": ">=8"
+        "node": ">=14"
     },
     "bugs": {
         "url": "https://github.com/devloco/create-react-wptheme/issues"
@@ -42,13 +42,13 @@
         "create-react-wptheme": "./index.js"
     },
     "dependencies": {
-        "chalk": "3.0.0",
-        "commander": "2.20.0",
-        "cross-spawn": "6.0.5",
-        "envinfo": "7.3.1",
-        "fs-extra": "7.0.1",
-        "semver": "6.3.0",
-        "tmp": "0.0.33",
-        "validate-npm-package-name": "3.0.0"
+        "chalk": "4.1.2",
+        "commander": "^9.5.0",
+        "cross-spawn": "7.0.6",
+        "envinfo": "7.14.0",
+        "fs-extra": "11.3.1",
+        "semver": "7.7.2",
+        "tmp": "0.2.5",
+        "validate-npm-package-name": "6.0.2"
     }
 }

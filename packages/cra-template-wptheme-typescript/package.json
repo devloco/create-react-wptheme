@@ -1,6 +1,6 @@
 {
     "name": "cra-template-wptheme-typescript",
-    "version": "3.4.1-wp.1",
+    "version": "5.0.1-wp.1",
     "keywords": [
         "react",
         "create-react-app",
@@ -17,7 +17,7 @@
     },
     "license": "MIT",
     "engines": {
-        "node": ">=8.10"
+        "node": ">=14"
     },
     "bugs": {
         "url": "https://github.com/devloco/create-react-wptheme/issues"

@@ -3,7 +3,7 @@
     "version": "3.4.1-wp.2",
     "description": "Utilities used by create-react-wptheme.",
     "engines": {
-        "node": ">=8"
+        "node": ">=14"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,11 +28,11 @@
         "wpThemeServer.js"
     ],
     "dependencies": {
-        "chalk": "2.4.2",
-        "chokidar": "^3.3.1",
-        "shelljs": "^0.8.3",
-        "fs-extra": "^8.1.0",
-        "ws": "^7.2.3"
+        "chalk": "^5.6.0",
+        "chokidar": "^4.0.3",
+        "shelljs": "0.8.5",
+        "fs-extra": "^11.3.1",
+        "ws": "^8.18.3"
     },
     "devDependencies": {}
 }
